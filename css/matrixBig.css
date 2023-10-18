@@ -426,7 +426,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
     font-family: inherit;
     font-size: inherit;
     background-color: #111;
-    color: #00ff00;
+    color: var(--r-main-color);
     box-sizing: border-box;
     border: 1px solid #111;
     outline: none;
@@ -435,33 +435,33 @@ section.has-light-background, section.has-light-background h1, section.has-light
 }
 
 input[type=text]:focus {
-    border: 1px solid #00ff00;
+    border: 1px solid var(--r-main-color);
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: green;
+    color: var(--r-main-color);
     opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: green;
+    color: var(--r-main-color);
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-    color: green;
+    color: var(--r-main-color);
 }
 
 .reveal .rectMatrix {
     position: relative;
-    color: #00ff00;
-    text-shadow: 0 0 2px #00ff00;
+    color: var(--r-main-color);
+    text-shadow: 0 0 2px var(--r-main-color);
 }
 
 .rectMatrix:before, .rectMatrix:after {
     content: "";
     position: absolute;
     top: 0;
-    border: 2px solid #00ff00;
+    border: 2px solid #var(--r-main-color);
     width: 6px;
     height: 100%;
 }
@@ -526,8 +526,8 @@ input[type=text]:focus {
     }
 
     25% {
-        color: #00ff00;
-        text-shadow: 0 0 5px #00ff00;
+        color: var(--r-main-color);
+        text-shadow: 0 0 5px var(--r-main-color);
     }
 
     50% {

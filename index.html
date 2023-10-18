@@ -28,472 +28,118 @@
 	</style>
 </head>
 
-	<body onload="totalWrapper(); startTorusAction();">
-		<div class="reveal">
+<body onload="totalWrapper(); startTorusAction();">
+	<div class="reveal">
 
-			<section class="slides">
+		<section class="slides">
 
-				<section class="white" style="text-align: center;">
-					<div class="r-frame" style="margin-bottom:50px; margin-top:60px;">
-						<h3 class="white">
-							Shapes of Hermitian matrices and topology of the corresponding isospectral manifolds
-						</h3>
-					</div>
+			<section class="white" style="text-align: center;">
+				<div class="r-frame" style="margin-bottom:50px; margin-top:60px;">
+					<h3 class="white">
+						Shapes of Hermitian matrices and topology of the corresponding isospectral manifolds
+					</h3>
+				</div>
 
-					<p style="margin-bottom:40px;">
-						<h4>
-							<a class="red" href="https://www.ayzenberg.xyz/">Anton Ayzenberg</a> ayzenberga@gmail.com <br>
-						</h4>
-					</p>
+				<p style="margin-bottom:40px;">
+					<h4>
+						<a class="red" href="https://www.ayzenberg.xyz/">Anton Ayzenberg</a> ayzenberga@gmail.com <br>
+					</h4>
+				</p>
 
-					<p style="margin-bottom:40px;">
-						<h4 class="blue">
-							Algebraic topology, combinatorics, and mathematical physics.
-						</h4>
+				<p style="margin-bottom:40px;">
+					<h4 class="blue">
+						Algebraic topology, combinatorics, and mathematical physics.
+					</h4>
+					<h4 class="white">
+						Sochi, SMC, 2023
+					</h4>
+				</p>
+
+				<div class="fragment">
+					<div class="typesetting" style="margin-bottom:30px;">
 						<h4 class="white">
-							Sochi, SMC, 2023 
+							based on joint works with
 						</h4>
-					</p>
+					</div>
+					<div class="typesetting">
+						<table style="font-size: 15px;">
+							<tr>
+								<td><img id="image1" src="pics/buchstaber128.jpg" width="128" height="128" /></td>
+								<td><img id="image1" src="pics/cherepanov128.jpg" width="128" height="128" /></td>
+								<td><img id="image1" src="pics/masuda128.jpg" width="128" height="128" /></td>
+								<td><img id="image1" src="pics/solomadin128.jpg" width="128" height="128" /></td>
+								<td><img id="image1" src="pics/sorokin128.jpg" width="128" height="128" /></td>
+							</tr>
+							<tr>
+								<td>V.Buchstaber</td>
+								<td>V.Cherepanov</td>
+								<td>M.Masuda</td>
+								<td>G.Solomadin</td>
+								<td>K.Sorokin</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</section>
 
-					<div class="fragment">
-						<div class="typesetting" style="margin-bottom:30px;">
-							<h4 class="white">
-								based on joint works with
-							</h4>
-						</div>
+			<section>
+				<div class="r-frame" style="margin-bottom:35px; margin-top:25px;">
+					<h2 class="neon">
+						Graphs and matrix shapes.
+					</h2>
+				</div>
+				<div class="fragment" data-fragment-index="0">
+					<div class="typesetting">
+						<ul>
+							<li>
+								$\Gamma$ : a graph with vertex set $[n]=\{1,\ldots,n\}$ and edge set
+								$E_\Gamma$.
+							</li>
+							<li>
+								$M_n$ : the set of all Hermitian matrices of size $n$.
+							</li>
+							<li>
+								$A\in M_n$ is called <span class="white">$\Gamma$-shaped</span>
+								if $a_{i,j}=0$ for $\{i,j\}\notin E_\Gamma$.
+							</li>
+							<li>
+								$M_\Gamma$ : the set of all $\Gamma$-shaped matrices
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="r-stack" style="margin-top:20px; margin-bottom:20px">
+					<div class="fragment fade-in-then-out" data-fragment-index="1">
 						<div class="typesetting">
-							<table style="font-size: 15px;">
+							<table style="font-size: 20px;">
 								<tr>
-									<td><img id="image1" src="pics/buchstaber128.jpg" width="128" height="128" /></td>
-									<td><img id="image1" src="pics/cherepanov128.jpg" width="128" height="128" /></td>
-									<td><img id="image1" src="pics/masuda128.jpg" width="128" height="128" /></td>
-									<td><img id="image1" src="pics/solomadin128.jpg" width="128" height="128" /></td>
-									<td><img id="image1" src="pics/sorokin128.jpg" width="128" height="128" /></td>
+									<td><img src="pics/clawGreen.png" /></td>
+									<td>$\Rightarrow$</td>
+									<td>
+										\[
+										\begin{pmatrix}
+										\ast & \ast & \ast & \ast \\
+										\ast & \ast &  &  \\
+										\ast &  & \ast &  \\
+										\ast &  &  & \ast
+										\end{pmatrix}
+										\]
+									</td>
 								</tr>
 								<tr>
-									<td>V.Buchstaber</td>
-									<td>V.Cherepanov</td>
-									<td>M.Masuda</td>
-									<td>G.Solomadin</td>
-									<td>K.Sorokin</td>
+									<td>Star graph</td>
+									<td></td>
+									<td>Arrowhead matrix</td>
 								</tr>
 							</table>
+
 						</div>
 					</div>
-				</section>
 
-				<section>
-					<div class="r-frame" style="margin-bottom:35px; margin-top:25px;">
-						<h2 class="neon">
-							Graphs and matrix shapes.
-						</h2>
-					</div>
-					<div class="fragment" data-fragment-index="0">
+					<div class="fragment fade-in-then-out" data-fragment-index="2">
 						<div class="typesetting">
-							<ul>
-								<li>
-									$\Gamma$ : a graph with vertex set $[n]=\{1,\ldots,n\}$ and edge set
-									$E_\Gamma$.
-								</li>
-								<li>
-									$M_n$ : the set of all Hermitian matrices of size $n$.
-								</li>
-								<li>
-									$A\in M_n$ is called <span class="white">$\Gamma$-shaped</span>
-									if $a_{i,j}=0$ for $\{i,j\}\notin E_\Gamma$.
-								</li>
-								<li>
-									$M_\Gamma$ : the set of all $\Gamma$-shaped matrices
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="r-stack" style="margin-top:20px; margin-bottom:20px">
-						<div class="fragment fade-in-then-out" data-fragment-index="1">
-							<div class="typesetting">
-								<table style="font-size: 20px;">
-									<tr>
-										<td><img src="pics/clawGreen.png" /></td>
-										<td>$\Rightarrow$</td>
-										<td>
-											\[
-											\begin{pmatrix}
-											\ast & \ast & \ast & \ast \\
-											\ast & \ast &  &  \\
-											\ast &  & \ast &  \\
-											\ast &  &  & \ast
-											\end{pmatrix}
-											\]
-										</td>
-									</tr>
-									<tr>
-										<td>Star graph</td>
-										<td></td>
-										<td>Arrowhead matrix</td>
-									</tr>
-								</table>
-
-							</div>
-						</div>
-
-						<div class="fragment fade-in-then-out" data-fragment-index="2">
-							<div class="typesetting">
-								<table style="font-size: 20px;">
-									<tr>
-										<td><img src="pics/fullGreen.png" /></td>
-										<td>$\Rightarrow$</td>
-										<td>
-											\[
-											\begin{pmatrix}
-											\ast & \ast & \ast & \ast \\
-											\ast & \ast & \ast & \ast \\
-											\ast & \ast & \ast & \ast \\
-											\ast & \ast & \ast & \ast
-											\end{pmatrix}
-											\]
-										</td>
-									</tr>
-									<tr>
-										<td>Full graph </td>
-										<td></td>
-										<td>Full matrix</td>
-									</tr>
-								</table>
-							</div>
-						</div>
-
-						<div class="fragment fade-in-then-out" data-fragment-index="3">
-							<div class="typesetting">
-								<table style="font-size: 20px;">
-									<tr>
-										<td><img src="pics/pathGreen.png" /></td>
-										<td>$\Rightarrow$</td>
-										<td>
-											\[
-											\begin{pmatrix}
-											\ast & \ast &  &  \\
-											\ast & \ast & \ast &  \\
-											& \ast & \ast & \ast \\
-											&  & \ast & \ast
-											\end{pmatrix}
-											\]
-										</td>
-									</tr>
-									<tr>
-										<td>Path graph</td>
-										<td></td>
-										<td>Tridiagonal matrix</td>
-									</tr>
-								</table>
-							</div>
-						</div>
-
-						<div class="fragment" data-fragment-index="4">
-							<div class="typesetting">
-								<table style="font-size: 20px;">
-									<tr>
-										<td><img src="pics/cycleGreen.png" /></td>
-										<td>$\Rightarrow$</td>
-										<td>
-											\[
-											\begin{pmatrix}
-											\ast & \ast &  &  & \ast\\
-											\ast & \ast & \ast &  &  \\
-											& \ast & \ast & \ast &  \\
-											&  & \ast & \ast & \ast \\
-											\ast &  &  & \ast & \ast
-											\end{pmatrix}
-											\]
-										</td>
-									</tr>
-									<tr>
-										<td>Cycle graph</td>
-										<td></td>
-										<td>Periodic tridiag-<br />onal matrix</td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-
-				</section>
-
-				<section>
-					<div class="r-frame" style="margin-bottom:35px; margin-top:25px;">
-						<h2 class="neon">
-							Graphs and matrix shapes.
-						</h2>
-					</div>
-
-					<table style="font-size: 20px;">
-						<tr>
-							<td><img src="pics/cycleGreen.png" /></td>
-							<td>$\Rightarrow$</td>
-							<td>
-								\[
-								\begin{pmatrix}
-								\ast & \ast &  &  & \ast\\
-								\ast & \ast & \ast &  &  \\
-								& \ast & \ast & \ast &  \\
-								&  & \ast & \ast & \ast \\
-								\ast &  &  & \ast & \ast
-								\end{pmatrix}
-								\]
-							</td>
-							<td><img src="pics/clawGreen.png" /></td>
-							<td>$\Rightarrow$</td>
-							<td>
-								\[
-								\begin{pmatrix}
-								\ast & \ast & \ast & \ast \\
-								\ast & \ast &  &  \\
-								\ast &  & \ast &  \\
-								\ast &  &  & \ast
-								\end{pmatrix}
-								\]
-							</td>
-						</tr>
-
-					</table>
-
-					<div class="fragment" data-fragment-index="5">
-						<div class="typesetting">
-							<ul>
-								<li>
-									$\lambda=(\lambda_1<\cdots<\lambda_n)$ : <span class="white">a simple spectrum<span>.
-								</li>
-								<li>
-									$M_\lambda$ : the set of all matrices with spectrum $\lambda$.
-								</li>
-								<li>
-									<span class="white">$M_{\Gamma,\lambda}=M_\Gamma\cap M_\lambda$ </span>
-									: the set of all $\Gamma$-shaped matrices with spectrum $\lambda$.
-								</li>
-								<li>
-									If $\lambda$ is generic, then
-									$M_{\Gamma,\lambda}$ is <span class="white">a smooth closed manifold </span>
-									(follows from <span class="blue">Sard's lemma</span>).
-								</li>
-								<li>
-									$\dim M_{\Gamma,\lambda}=2|E_\Gamma|$.
-								</li>
-							</ul>
-						</div>
-					</div>
-
-				</section>
-
-
-				<section data-auto-animate>
-					<div class="r-frame" style="margin-bottom:20px; margin-top:25px;">
-						<h2 class="white">
-							Torus action on matrices:
-						</h2>
-					</div>
-
-					<div class="white">
-						<ul class="fragment" style="margin-bottom:15px;">
-							<li class="typesetting">
-								Unitary group $U(n)$ acts on $M_n$ <span class="blue">by conjugation</span>.
-								It preserves the spectrum.
-							</li>
-							<li class="typesetting">
-								Let $T\subset U(n)$ be the torus of diagonal matrices. We have induced $T$-action on $M_\lambda$.
-							</li>
-						</ul>
-					</div>
-
-
-					<div id="torusActs" class="fragment" style="margin-bottom: 15px; font-size: 20px;">
-						<table class="noBorders">
-							<tr>
-								<td style="text-align:right;">
-									<div id="torusBox" class="torusActs" onmousemove="getTorusCoords(event)" onmouseleave="resetTorus(event)">
-										<div class="torusInterior">
-											This is a torus. <br />
-											Move cursor to pick an element and act on a matrix!
-										</div>
-									</div>
-								</td>
-								<td>
-									$\circlearrowright$
-								</td>
-								<td>
-									<div id="blockToAct">
-										<table id="matrixToAct" class="rectMatrix">
-											<tr>
-												<td width="150">*</td>
-												<td width="150">*</td>
-												<td width="150">*</td>
-											</tr>
-											<tr>
-												<td>*</td>
-												<td>*</td>
-												<td>*</td>
-											</tr>
-											<tr>
-												<td>*</td>
-												<td>*</td>
-												<td>*</td>
-											</tr>
-										</table>
-									</div>
-
-									<div id="blockToInput" style="display:none;">
-										<table id="matrixToInput" class="rectMatrix">
-											<tr>
-												<td width="150"><input type="text" id="b11" placeholder="1" name="a11" autocomplete="off"></td>
-												<td width="150"><input type="text" id="b12" placeholder="0" name="a12" autocomplete="off"></td>
-												<td width="150"><input type="text" id="b13" placeholder="0" name="a13" autocomplete="off"></td>
-											</tr>
-											<tr>
-												<td id="b21">0</td>
-												<td><input type="text" id="b22" placeholder="1" name="a22" autocomplete="off"></td>
-												<td><input type="text" id="b23" placeholder="0" name="a23" autocomplete="off"></td>
-											</tr>
-											<tr>
-												<td id="b31">0</td>
-												<td id="b32">0</td>
-												<td><input type="text" id="b33" placeholder="1" name="b33" autocomplete="off"></td>
-											</tr>
-										</table>
-									</div>
-
-								</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td>
-									<a class="yellow" id="changeTypeButton" onclick="changeTableInput()">[edit]</a>
-								</td>
-							</tr>
-
-						</table>
-
-					</div>
-
-					<div class="white">
-						<ul class="fragment" style="margin-bottom:30px;">
-							<li class="typesetting">
-								$T$-action on $M_\lambda$ <span class="white">preserves $\Gamma$-shape</span> for any graph $\Gamma$.
-							</li>
-							<li class="typesetting">
-								Therefore, the torus <span class="blue">$T$ acts on $M_{\Gamma,\lambda}$</span>.
-							</li>
-						</ul>
-
-						<div class="fragment" style="margin-bottom:30px;">
-							<div class="typesetting">
-								<div class="r-frame">
-									<h3 class="blue" style="text-align:center;">We are interested in toric topology of $M_{\Gamma,\lambda}$</h3>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="white">
-					<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
-						<h2 class="white">
-							Torus actions. General notions:
-						</h2>
-					</div>
-
-					<ul class="fragment" style="margin-bottom:20px;">
-						<li class="typesetting">
-							$T$ : compact torus.
-						</li>
-						<li class="typesetting">
-							$T$ acts smoothly (and effectively) on a smooth manifold $X$.
-						</li>
-						<li class="typesetting">
-							$X^T$ : the  <span class="blue"> set of $T$-fixed points </span>. It is assumed finite and nonempty.
-						</li>
-
-					</ul>
-
-					<ul class="fragment" style="margin-bottom:20px;">
-						<li class="typesetting">
-							$X_T=X\times_TET$ : <span class="blue">Borel construction</span>;
-						</li>
-						<li class="typesetting">
-							$p\colon X_T\stackrel{X}{\to} BT$ : <span class="blue">Serre fibration</span>;
-						</li>
-						<li class="typesetting">
-							$H^*_T(X)=H^*(X_T)$ : <span class="blue">equivariant cohomology module</span>;
-						</li>
-						<li class="typesetting">
-							$E_2^{p,q}\cong H^p(BT)\otimes H^q(X)\Rightarrow H^{p+q}_T(X)$ :
-							<span class="blue">Serre spectral sequence</span>.
-						</li>
-					</ul>
-
-					<div class="fragment">
-						<div class="typesetting" style="margin-bottom:30px;">
-							<p class="r-frame">
-								<span class="red">Definition:</span> $X$ is called
-								<span class="blue">equivariantly formal</span> if its Serre spectral sequence
-								degenerates at $E_2$.
-							</p>
-						</div>
-					</div>
-
-				</section>
-
-				<section class="white">
-					<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
-						<h2 class="white">
-							Torus actions. General notions:
-						</h2>
-					</div>
-
-					<ul style="margin-bottom:20px;">
-						<li>
-							$E_2^{p,q}\cong H^p(BT)\otimes H^q(X)\Rightarrow H^{p+q}_T(X)$ :
-							<span class="blue">Serre spectral sequence</span>.
-						</li>
-					</ul>
-
-					<p class="r-frame" style="margin-bottom:30px;">
-						<span class="red">Definition:</span> $X$ is called
-						<span class="blue">equivariantly formal</span> if its Serre spectral sequence
-						degenerates at $E_2$.
-					</p>
-
-					<div class="fragment">
-						<div class="typesetting" style="margin-bottom:30px;">
-							<p>
-								<span class="blue">Equivalently (fixed points are isolated):</span>
-								Equivariant formality $\Leftrightarrow$ $H^{odd}(X)=0$.
-							</p>
-						</div>
-					</div>
-
-					<div class="fragment" style="margin-bottom:30px;">
-						<div class="typesetting">
-							<div class="r-frame">
-								<h3 style="text-align:center;">
-									<span class="rainbow">Problem for today:</span> which manifolds $M_{\Gamma,\lambda}$
-									are equiavariantly formal?
-								</h3>
-							</div>
-						</div>
-					</div>
-
-				</section>
-
-				<section>
-					<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
-						<h2 class="neon">
-							Examples: full matrices
-						</h2>
-					</div>
-
-					<div class="fragment">
-						<div class="typesetting">
-							<table style="font-size: 20px; margin-bottom:50px;">
+							<table style="font-size: 20px;">
 								<tr>
 									<td><img src="pics/fullGreen.png" /></td>
 									<td>$\Rightarrow$</td>
@@ -515,36 +161,11 @@
 								</tr>
 							</table>
 						</div>
-
-						<div class="typesetting">
-							<ul class="white">
-								<li>
-									Full graph corresponds to the manifold $M_\lambda$ itself.
-								</li>
-								<li>
-									$U(n)$ acts transitively on $M_\lambda$ with stabilizer $T^n$.
-								</li>
-								<li>
-									Hence $M_\lambda\cong U(n)/T=Fl_n$, the <span class="blue">full flag variety</span>.
-								<li>
-									It is <span class="neon">equivariantly formal</span>.
-								</li>
-							</ul>
-						</div>
 					</div>
 
-				</section>
-
-				<section>
-					<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
-						<h2 class="neon">
-							Examples: tridiagonal
-						</h2>
-					</div>
-
-					<div class="fragment">
+					<div class="fragment fade-in-then-out" data-fragment-index="3">
 						<div class="typesetting">
-							<table style="font-size: 20px; margin-bottom: 30px;">
+							<table style="font-size: 20px;">
 								<tr>
 									<td><img src="pics/pathGreen.png" /></td>
 									<td>$\Rightarrow$</td>
@@ -560,177 +181,15 @@
 									</td>
 								</tr>
 								<tr>
-									<td>Path graph $\mathbb{I}_n$</td>
+									<td>Path graph</td>
 									<td></td>
 									<td>Tridiagonal matrix</td>
 								</tr>
 							</table>
 						</div>
-
-						<div class="typesetting">
-							<ul class="white">
-								<li>
-									Path graph corresponds to tridiagonal matrices.
-								</li>
-								<li>
-									The manifold $M_{\mathbb{I}_n,\lambda}$ was introduced and studied by
-									<span class="yellow">Tomei'84</span>.
-								</li>
-								<li>
-									Tomei proved that $M_{\mathbb{I}_n,\lambda}/T$ is a
-									<span class="yellow">permutohedron</span>.
-								</li>
-								<li>
-									In modern terminology, $M_{\mathbb{I}_n,\lambda}$ is a
-									<span class="blue">quasitoric manifold over permutohedron</span>.
-								</li>
-								<li>
-									$M_{\mathbb{I}_n,\lambda}$ is <span class="neon">equivariantly formal</span>.
-								</li>
-							</ul>
-						</div>
 					</div>
 
-				</section>
-
-				<section>
-					<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
-						<h2 class="neon">
-							Examples: staircase
-						</h2>
-					</div>
-
-					<div class="fragment">
-						<div class="typesetting">
-							<table style="font-size: 20px; margin-bottom: 30px;">
-								<tr>
-									<td><img src="pics/intersections2.png" /></td>
-									<td>$\Rightarrow$</td>
-									<td>
-										\[
-										\begin{pmatrix}
-										\ast & \ast & \ast & & \\
-										\ast & \ast & \ast & \ast & \\
-										\ast & \ast & \ast & \ast & \\
-										& \ast & \ast & \ast & \ast \\
-										& & & \ast & \ast \\
-										\end{pmatrix}
-										\]
-									</td>
-								</tr>
-							</table>
-						</div>
-
-						<div class="typesetting">
-							<ul class="white">
-								<li>
-									Spaces like $M_{\Gamma,\lambda}$ appeared in the literature
-									(<span class="yellow">de Mari</span>, etc.)
-								</li>
-								<li>
-									A.-Buchtaber'21 noticed that $M_{\Gamma,\lambda}$ shares many common properties
-									with corresponding regular semisimple Hessenberg varieties. We called them
-									<span class="red">twins</span>.
-								</li>
-								<li>
-									Using Morse theory, we proved that $M_{\Gamma,\lambda}$
-									<span class="blue">admits even-dimensional cell structure</span>.
-								</li>
-								<li>
-									Hence $M_{\Gamma,\lambda}$ is <span class="neon">equivariantly formal</span>.
-								</li>
-							</ul>
-						</div>
-					</div>
-
-				</section>
-
-				<section>
-					<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
-						<h2 class="neon">
-							Examples: arrowhead
-						</h2>
-					</div>
-
-					<div class="fragment" style="margin-bottom:30px;">
-						<div class="typesetting">
-							<table style="font-size: 20px;">
-								<tr>
-									<td><img src="pics/clawGreen.png" /></td>
-									<td>$\Rightarrow$</td>
-									<td>
-										\[
-										\begin{pmatrix}
-										\ast & \ast & \ast & \ast \\
-										\ast & \ast &  &  \\
-										\ast &  & \ast &  \\
-										\ast &  &  & \ast
-										\end{pmatrix}
-										\]
-									</td>
-								</tr>
-								<tr>
-									<td>Star graph $St_n$</td>
-									<td></td>
-									<td>Arrowhead matrix</td>
-								</tr>
-							</table>
-						</div>
-						<div class="typesetting">
-							<ul class="white">
-								<li>
-									Torus action has complexity $0$. This is a <span class="blue">torus manifold</span>.
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<table class="fragment" style="margin-bottom: 20px;">
-						<tr class="white">
-							<td class="typesetting" style="width:650px; text-align:left;">
-								<div class="r-frame" style="margin-bottom: 15px;">
-									<span class="red">Theorem (Gal-Januszkiewicz, unpublished):</span>
-									$M_{St_3,\lambda}/T$ is a solid torus with boundary subdivided into hexagons.
-								</div>
-								Therefore, from <span class="yellow">Masuda-Panov theorem</span> it follows that <br />
-								<span class="red">$M_{St_3,\lambda}$ is not equivariantly formal</span>.
-							</td>
-							<td>
-								<div class="r-frame">
-									<img src="pics/animatedTorus.gif" style="width:200px;">
-								</div>
-							</td>
-						</tr>
-					</table>
-
-					<!--<div class="fragment">
-			<div class="typesetting">
-				<ul class="white">
-					<li>
-						A.-Buchstaber computed Betti numbers in the simplest case
-						\[
-						\beta(M_{St_3,\lambda})=(1,1,12,0,12,1,1).
-						\]
-					</li>
-					<li>
-						We also described homotopy type of $M_{St_n,\lambda}/T$ for any star graph $St_n$.
-					</li>
-					<li>
-						$M_{St_n,\lambda}$ is not formal for $n\geqslant 3$.
-					</li>
-				</ul>
-			</div>
-		</div>-->
-				</section>
-
-				<section>
-					<div class="r-frame" style="margin-bottom:20px; margin-top:25px;">
-						<h2 class="neon">
-							Examples: periodic tridiagonal
-						</h2>
-					</div>
-
-					<div class="fragment" style="margin-bottom:30px;">
+					<div class="fragment" data-fragment-index="4">
 						<div class="typesetting">
 							<table style="font-size: 20px;">
 								<tr>
@@ -749,474 +208,1205 @@
 									</td>
 								</tr>
 								<tr>
-									<td>Cycle graph $Cy_n$</td>
+									<td>Cycle graph</td>
 									<td></td>
 									<td>Periodic tridiag-<br />onal matrix</td>
 								</tr>
 							</table>
 						</div>
-						<div class="typesetting">
-							<ul class="white">
-								<li>
-									Torus action of <span class="blue">complexity $1$ in general position</span>.
-								</li>
-							</ul>
-						</div>
 					</div>
+				</div>
 
-					<div class="fragment" style="margin-bottom:20px;">
-						<div class="typesetting">
-							<ul class="white">
-								<li>
-									<span class="yellow">A.'20:</span> $M_{Cy_n,\lambda}$
-									<span class="red">is not equivariantly formal</span> for $n\geqslant 4$.
-								</li>
-							</ul>
-						</div>
+			</section>
+
+			<section>
+				<div class="r-frame" style="margin-bottom:35px; margin-top:25px;">
+					<h2 class="neon">
+						Graphs and matrix shapes.
+					</h2>
+				</div>
+
+				<table style="font-size: 20px;">
+					<tr>
+						<td><img src="pics/cycleGreen.png" /></td>
+						<td>$\Rightarrow$</td>
+						<td>
+							\[
+							\begin{pmatrix}
+							\ast & \ast &  &  & \ast\\
+							\ast & \ast & \ast &  &  \\
+							& \ast & \ast & \ast &  \\
+							&  & \ast & \ast & \ast \\
+							\ast &  &  & \ast & \ast
+							\end{pmatrix}
+							\]
+						</td>
+						<td><img src="pics/clawGreen.png" /></td>
+						<td>$\Rightarrow$</td>
+						<td>
+							\[
+							\begin{pmatrix}
+							\ast & \ast & \ast & \ast \\
+							\ast & \ast &  &  \\
+							\ast &  & \ast &  \\
+							\ast &  &  & \ast
+							\end{pmatrix}
+							\]
+						</td>
+					</tr>
+
+				</table>
+
+				<div class="fragment" data-fragment-index="5">
+					<div class="typesetting">
+						<ul>
+							<li>
+								$\lambda=(\lambda_1<\cdots<\lambda_n)$ : <span class="white">a simple spectrum<span>.
+							</li>
+							<li>
+								$M_\lambda$ : the set of all matrices with spectrum $\lambda$.
+							</li>
+							<li>
+								<span class="white">$M_{\Gamma,\lambda}=M_\Gamma\cap M_\lambda$ </span>
+								: the set of all $\Gamma$-shaped matrices with spectrum $\lambda$.
+							</li>
+							<li>
+								If $\lambda$ is generic, then
+								$M_{\Gamma,\lambda}$ is <span class="white">a smooth closed manifold </span>
+								(follows from <span class="blue">Sard's lemma</span>).
+							</li>
+							<li>
+								$\dim M_{\Gamma,\lambda}=2|E_\Gamma|$.
+							</li>
+						</ul>
 					</div>
+				</div>
 
-					<div class="r-stack">
-						<div class="fragment fade-in-then-out">
-							<div class="typesetting">
-								<ul class="white">
-									<li>
-										$\pi_1(M_{Cy_n,\lambda})\cong \mathbb{Z}^{n-3}$ (if $M_{Cy_n,\lambda}$ is smooth).
-									</li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="white">
-							<div class="fragment">
-								<div class="typesetting">
-									<div class="r-frame" style="margin-bottom:20px;">
-										<span class="red">A.-Masuda'19:</span> If there is an equivariantly formal torus action of complexity $1$
-										in general position on $X$, then $X/T$ is a <span class="blue">homology sphere</span>.
-									</div>
-									<p style="text-align:center;">
-										But I proved: $M_{Cy_n,\lambda}/T\cong S^4\times T^{n-3}$.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</section>
-
-				<section>
-
-					<div class="r-frame" style="margin-bottom:10px; margin-top:25px;">
-						<h2 class="white">
-							Indifference graphs:
-						</h2>
-					</div>
-
-					<div class="fragment">
-						<div class="typesetting" style="margin-bottom:20px;">
-							<p>
-								Which graphs correspond to staircase matrices?
-							</p>
-						</div>
-					</div>
-
-					<div class="fragment" style="margin-bottom:20px;">
-						<div class="typesetting">
-							<p class="r-frame" style="margin-bottom:15px;">
-								<span class="white">Definition:</span> Graph $\Gamma$ is called
-								<span class="blue">indifference graph</span> if it is the intersection graph
-								of some collection of unit intervals on a line $\mathbb{R}$.
-							</p>
-							<div style="text-align: center;">
-								<img src="pics/intersections.png" />
-							</div>
-							<p>
-								Also called <span class="blue">unit interval</span> graphs or
-								<span class="blue">proper interval</span> graphs.
-							</p>
-						</div>
-					</div>
-					<div class="fragment">
-						<div class="typesetting">
-							<div class="r-frame">
-								<span class="white">Theorem (Mertzios'08): </span>
-								$\Gamma$ represents staircase matrices $\Leftrightarrow$ $\Gamma$ is an indifference graph.
-							</div>
-							<table style="font-size: 20px;">
-								<tr>
-									<td><img src="pics/intersections2.png" /></td>
-									<td>$\Rightarrow$</td>
-									<td>
-										\[
-										\begin{pmatrix}
-										\ast & \ast & \ast & & \\
-										\ast & \ast & \ast & \ast & \\
-										\ast & \ast & \ast & \ast & \\
-										& \ast & \ast & \ast & \ast \\
-										& & & \ast & \ast \\
-										\end{pmatrix}
-										\]
-									</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-
-				</section>
-
-				<section>
-					<div class="r-frame" style="margin-bottom:120px; margin-top:25px;">
-						<h2 class="neon">
-							Warning:
-						</h2>
-					</div>
+			</section>
 
 
-					<div class="fragment">
-						<div class="typesetting">
-							<div class="white">
-								Some matrices are staircase even if they don't look so:
-							</div>
+			<section data-auto-animate>
+				<div class="r-frame" style="margin-bottom:20px; margin-top:25px;">
+					<h2 class="white">
+						Torus action on matrices:
+					</h2>
+				</div>
 
-							<table style="font-size: 20px;">
-								<tr>
-									<td><img src="pics/pathBad.png" /></td>
-									<td>$\Rightarrow$</td>
-									<td>
-										\[
-										\begin{pmatrix}
-										\ast & \ast & \ast \\
-										\ast & \ast &   \\
-										\ast &  &  \ast
-										\end{pmatrix}
-										\]
-									</td>
-									<td></td>
-									<td><img src="pics/pathGood.png" /></td>
-									<td>$\Rightarrow$</td>
-									<td>
-										\[
-										\begin{pmatrix}
-										\ast & \ast &  \\
-										\ast & \ast & \ast  \\
-										& \ast & \ast
-										\end{pmatrix}
-										\]
-									</td>
-								</tr>
-							</table>
-
-							<div class="white">
-								Spaces $M_{\Gamma,\lambda}$ in these two cases are homeomorphic. The space depends only on a graph.
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="white">
-					<div class="r-frame" style="margin-bottom:5px; margin-top:25px;">
-						<h2 class="neon">
-							Result
-						</h2>
-					</div>
-
-					<div class="fragment" style="margin-bottom: 30px; margin-top: 20px;">
-						<div class="typesetting">
-							For any graph $\Gamma$ on $n$ vertices we have:
-							<ul>
-								<li>
-									$T$-action on $M_{\Gamma,\lambda}$ has <span class="blue">$n!$ many fixed points</span>,
-								</li>
-								<li>
-									therefore $\beta_{even}-\beta_{odd}=\chi(M_{\Gamma,\lambda})=n!$,
-								</li>
-								<li>
-									therefore $\beta(M_{\Gamma,\lambda})\geqslant n!$.
-								</li>
-							</ul>
-						</div>
-					</div>
+				<div class="white">
+					<ul class="fragment" style="margin-bottom:15px;">
+						<li class="typesetting">
+							Unitary group $U(n)$ acts on $M_n$ <span class="blue">by conjugation</span>.
+							It preserves the spectrum.
+						</li>
+						<li class="typesetting">
+							Let $T\subset U(n)$ be the torus of diagonal matrices. We have induced $T$-action on $M_\lambda$.
+						</li>
+					</ul>
+				</div>
 
 
-					<div class="fragment" style="margin-bottom: 30px; text-align:center;">
-						<div class="r-frame">
-							<div class="typesetting">
-								<h3>
-									<span class="red">
-										Theorem:
-									</span> The following conditions are equivalent:
-									<ol class="white">
-										<li>
-											$\Gamma$ is an indifference graph,
-										</li>
-										<li>
-											$M_{\Gamma,\lambda}$ is equivariantly formal;
-										</li>
-										<li>
-											$\beta(M_{\Gamma,\lambda})=n!$.
-										</li>
-									</ol>
-								</h3>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="white">
-					<div class="r-frame" style="margin-bottom:120px; margin-top:25px;">
-						<h2 class="neon">
-							Topological complexity
-						</h2>
-					</div>
-
-
-					<div class="fragment" style="margin-bottom: 60px; text-align:center;">
-						<div class="typesetting">
-							<h3 class="r-frame" style="margin-bottom: 70px;">
-								<span class="red">
-									Corollary:
-								</span> If $\Gamma$ is not indifference, then
-								<ul>
-									<li>
-										$\beta(M_{\Gamma,\lambda})>n!$, hence
-									</li>
-									<li>
-										any <span class="blue">Morse-Smale flow</span> on $M_{\Gamma,\lambda}$ has $>n!$ stationary points.
-									</li>
-								</ul>
-							</h3>
-							<div>
-								This gives an <span class="yellow">applied math intuition</span> behind this result.
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section id="QRalgorithm">
-					<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
-						<h2 class="yellow">
-							QR-algorithm
-						</h2>
-					</div>
-
-					<table style="margin-bottom:30px;">
-						<tr>
-							<td> Original matrix:  </td>
-							<td>
-								<table id="matrixFormQR" class="rectMatrix">
-									<tr>
-										<td><input type="text" id="a11" placeholder="1" name="a11" autocomplete="off"></td>
-										<td><input type="text" id="a12" placeholder="0" name="a12" autocomplete="off"></td>
-										<td><input type="text" id="a13" placeholder="0" name="a13" autocomplete="off"></td>
-										<td><input type="text" id="a14" placeholder="0" name="a14" autocomplete="off"></td>
-									</tr>
-									<tr>
-										<td id="a21">0</td>
-										<td><input type="text" id="a22" placeholder="1" name="a22" autocomplete="off"></td>
-										<td><input type="text" id="a23" placeholder="0" name="a23" autocomplete="off"></td>
-										<td><input type="text" id="a24" placeholder="0" name="a24" autocomplete="off"></td>
-									</tr>
-									<tr>
-										<td id="a31">0</td>
-										<td id="a32">0</td>
-										<td><input type="text" id="a33" placeholder="1" name="a33" autocomplete="off"></td>
-										<td><input type="text" id="a34" placeholder="0" name="a34" autocomplete="off"></td>
-									</tr>
-									<tr>
-										<td id="a41">0</td>
-										<td id="a42">0</td>
-										<td id="a43">0</td>
-										<td><input type="text" id="a44" placeholder="1" name="a44" autocomplete="off"></td>
-									</tr>
-								</table>
-							</td>
-
-							<td>&nbsp;</td>
-							<td width="400" style="text-align:left;">
-								At each step we represent a matrix $A_i$ as $Q\cdot R$
-								and take $A_{i+1}=R\cdot Q$. Here $Q$ is orgthogonal, $R$ is upper triangular.
-							</td>
-						</tr>
-					</table>
-
-					<table style="margin-bottom:30px;">
+				<div id="torusActs" class="fragment" style="margin-bottom: 15px; font-size: 20px;">
+					<table class="noBorders">
 						<tr>
 							<td style="text-align:right;">
-								Fill in the matrix above.<br />
-								Press <a onclick="resetMatrixFromForm();" class="blue">"u"</a> to upload.<br />
-								Press <a onclick="showQRMatrix();" class="white">"q"</a> to make QR step.<br /><br />
-								After <span class="blue" id="numberOfIters"> 0 </span> iterations:
+								<div id="torusBox" class="torusActs" onmousemove="getTorusCoords(event)" onmouseleave="resetTorus(event)">
+									<div class="torusInterior">
+										This is a torus. <br />
+										Move cursor to pick an element and act on a matrix!
+									</div>
+								</div>
 							</td>
 							<td>
-								<table id="iteratedMatrix" class="rectMatrix">
-									<tr>
-										<td>*</td>
-										<td>*</td>
-										<td>*</td>
-										<td>*</td>
-									</tr>
-									<tr>
-										<td>*</td>
-										<td>*</td>
-										<td>*</td>
-										<td>*</td>
-									</tr>
-									<tr>
-										<td>*</td>
-										<td>*</td>
-										<td>*</td>
-										<td>*</td>
-									</tr>
-									<tr>
-										<td>*</td>
-										<td>*</td>
-										<td>*</td>
-										<td>*</td>
-									</tr>
-								</table>
+								$\circlearrowright$
+							</td>
+							<td>
+								<div id="blockToAct">
+									<table id="matrixToAct" class="rectMatrix">
+										<tr>
+											<td width="150">*</td>
+											<td width="150">*</td>
+											<td width="150">*</td>
+										</tr>
+										<tr>
+											<td>*</td>
+											<td>*</td>
+											<td>*</td>
+										</tr>
+										<tr>
+											<td>*</td>
+											<td>*</td>
+											<td>*</td>
+										</tr>
+									</table>
+								</div>
+
+								<div id="blockToInput" style="display:none;">
+									<table id="matrixToInput" class="rectMatrix">
+										<tr>
+											<td width="150"><input type="text" id="b11" placeholder="1" name="a11" autocomplete="off"></td>
+											<td width="150"><input type="text" id="b12" placeholder="0" name="a12" autocomplete="off"></td>
+											<td width="150"><input type="text" id="b13" placeholder="0" name="a13" autocomplete="off"></td>
+										</tr>
+										<tr>
+											<td id="b21">0</td>
+											<td><input type="text" id="b22" placeholder="1" name="a22" autocomplete="off"></td>
+											<td><input type="text" id="b23" placeholder="0" name="a23" autocomplete="off"></td>
+										</tr>
+										<tr>
+											<td id="b31">0</td>
+											<td id="b32">0</td>
+											<td><input type="text" id="b33" placeholder="1" name="b33" autocomplete="off"></td>
+										</tr>
+									</table>
+								</div>
+
 							</td>
 						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>
+								<a class="yellow" id="changeTypeButton" onclick="changeTableInput()">[edit]</a>
+							</td>
+						</tr>
+
 					</table>
 
-				</section>
+				</div>
 
-				<section id="QRalgorithm">
-					<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
-						<h2 class="yellow">
-							QR-algorithm
-						</h2>
-					</div>
-
+				<div class="white">
+					<ul class="fragment" style="margin-bottom:30px;">
+						<li class="typesetting">
+							$T$-action on $M_\lambda$ <span class="white">preserves $\Gamma$-shape</span> for any graph $\Gamma$.
+						</li>
+						<li class="typesetting">
+							Therefore, the torus <span class="blue">$T$ acts on $M_{\Gamma,\lambda}$</span>.
+						</li>
+					</ul>
 
 					<div class="fragment" style="margin-bottom:30px;">
 						<div class="typesetting">
-							<ul>
-								<li>
-									QR-algorithm preserves spectrum and symmetricity.
-								</li>
-								<li>
-									It has $n!$ limit points (diagonal matrices with spectrum at the diagonal).
-								</li>
-								<li>
-									It is a <span class="white">Morse-Smale cascade</span> on $M_\lambda$.
-								</li>
-								<li>
-									QR-algorithm preserves staircase shape.
-								</li>
-								<li>
-									It is a flow on $M_{\Gamma,\lambda}$ for indifference graph $\Gamma$.
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<div class="fragment">
-						<div class="typesetting">
-							<div class="r-frame" style="margin-bottom:30px; margin-top:10px;">
-								<h2 class="yellow">
-									Toda flow
-								</h2>
+							<div class="r-frame">
+								<h3 class="blue" style="text-align:center;">We are interested in toric topology of $M_{\Gamma,\lambda}$</h3>
 							</div>
-							<ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="white">
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="white">
+						Torus actions. General notions:
+					</h2>
+				</div>
+
+				<ul class="fragment" style="margin-bottom:20px;">
+					<li class="typesetting">
+						$T$ : compact torus.
+					</li>
+					<li class="typesetting">
+						$T$ acts smoothly (and effectively) on a smooth manifold $X$.
+					</li>
+					<li class="typesetting">
+						$X^T$ : the  <span class="blue"> set of $T$-fixed points </span>. It is assumed finite and nonempty.
+					</li>
+
+				</ul>
+
+				<ul class="fragment" style="margin-bottom:20px;">
+					<li class="typesetting">
+						$X_T=X\times_TET$ : <span class="blue">Borel construction</span>;
+					</li>
+					<li class="typesetting">
+						$p\colon X_T\stackrel{X}{\to} BT$ : <span class="blue">Serre fibration</span>;
+					</li>
+					<li class="typesetting">
+						$H^*_T(X)=H^*(X_T)$ : <span class="blue">equivariant cohomology module</span>;
+					</li>
+					<li class="typesetting">
+						$E_2^{p,q}\cong H^p(BT)\otimes H^q(X)\Rightarrow H^{p+q}_T(X)$ :
+						<span class="blue">Serre spectral sequence</span>.
+					</li>
+				</ul>
+
+				<div class="fragment">
+					<div class="typesetting" style="margin-bottom:30px;">
+						<p class="r-frame">
+							<span class="red">Definition:</span> $X$ is called
+							<span class="blue">equivariantly formal</span> if its Serre spectral sequence
+							degenerates at $E_2$.
+						</p>
+					</div>
+				</div>
+
+			</section>
+
+			<section class="white">
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="white">
+						Torus actions. General notions:
+					</h2>
+				</div>
+
+				<ul style="margin-bottom:20px;">
+					<li>
+						$E_2^{p,q}\cong H^p(BT)\otimes H^q(X)\Rightarrow H^{p+q}_T(X)$ :
+						<span class="blue">Serre spectral sequence</span>.
+					</li>
+				</ul>
+
+				<p class="r-frame" style="margin-bottom:30px;">
+					<span class="red">Definition:</span> $X$ is called
+					<span class="blue">equivariantly formal</span> if its Serre spectral sequence
+					degenerates at $E_2$.
+				</p>
+
+				<div class="fragment">
+					<div class="typesetting" style="margin-bottom:30px;">
+						<p>
+							<span class="blue">Equivalently (fixed points are isolated):</span>
+							Equivariant formality $\Leftrightarrow$ $H^{odd}(X)=0$.
+						</p>
+					</div>
+				</div>
+
+				<div class="fragment" style="margin-bottom:30px;">
+					<div class="typesetting">
+						<div class="r-frame">
+							<h3 style="text-align:center;">
+								<span class="rainbow">Problem for today:</span> which manifolds $M_{\Gamma,\lambda}$
+								are equiavariantly formal?
+							</h3>
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+			<section>
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="neon">
+						Examples: full matrices
+					</h2>
+				</div>
+
+				<div class="fragment">
+					<div class="typesetting">
+						<table style="font-size: 20px; margin-bottom:50px;">
+							<tr>
+								<td><img src="pics/fullGreen.png" /></td>
+								<td>$\Rightarrow$</td>
+								<td>
+									\[
+									\begin{pmatrix}
+									\ast & \ast & \ast & \ast \\
+									\ast & \ast & \ast & \ast \\
+									\ast & \ast & \ast & \ast \\
+									\ast & \ast & \ast & \ast
+									\end{pmatrix}
+									\]
+								</td>
+							</tr>
+							<tr>
+								<td>Full graph </td>
+								<td></td>
+								<td>Full matrix</td>
+							</tr>
+						</table>
+					</div>
+
+					<div class="typesetting">
+						<ul class="white">
+							<li>
+								Full graph corresponds to the manifold $M_\lambda$ itself.
+							</li>
+							<li>
+								$U(n)$ acts transitively on $M_\lambda$ with stabilizer $T^n$.
+							</li>
+							<li>
+								Hence $M_\lambda\cong U(n)/T=Fl_n$, the <span class="blue">full flag variety</span>.
+							<li>
+								It is <span class="neon">equivariantly formal</span>.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</section>
+
+			<section>
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="neon">
+						Examples: tridiagonal
+					</h2>
+				</div>
+
+				<div class="fragment">
+					<div class="typesetting">
+						<table style="font-size: 20px; margin-bottom: 30px;">
+							<tr>
+								<td><img src="pics/pathGreen.png" /></td>
+								<td>$\Rightarrow$</td>
+								<td>
+									\[
+									\begin{pmatrix}
+									\ast & \ast &  &  \\
+									\ast & \ast & \ast &  \\
+									& \ast & \ast & \ast \\
+									&  & \ast & \ast
+									\end{pmatrix}
+									\]
+								</td>
+							</tr>
+							<tr>
+								<td>Path graph $\mathbb{I}_n$</td>
+								<td></td>
+								<td>Tridiagonal matrix</td>
+							</tr>
+						</table>
+					</div>
+
+					<div class="typesetting">
+						<ul class="white">
+							<li>
+								Path graph corresponds to tridiagonal matrices.
+							</li>
+							<li>
+								The manifold $M_{\mathbb{I}_n,\lambda}$ was introduced and studied by
+								<span class="yellow">Tomei'84</span>.
+							</li>
+							<li>
+								Tomei proved that $M_{\mathbb{I}_n,\lambda}/T$ is a
+								<span class="yellow">permutohedron</span>.
+							</li>
+							<li>
+								In modern terminology, $M_{\mathbb{I}_n,\lambda}$ is a
+								<span class="blue">quasitoric manifold over permutohedron</span>.
+							</li>
+							<li>
+								$M_{\mathbb{I}_n,\lambda}$ is <span class="neon">equivariantly formal</span>.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</section>
+
+			<section>
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="neon">
+						Examples: staircase
+					</h2>
+				</div>
+
+				<div class="fragment">
+					<div class="typesetting">
+						<table style="font-size: 20px; margin-bottom: 30px;">
+							<tr>
+								<td><img src="pics/intersections2.png" /></td>
+								<td>$\Rightarrow$</td>
+								<td>
+									\[
+									\begin{pmatrix}
+									\ast & \ast & \ast & & \\
+									\ast & \ast & \ast & \ast & \\
+									\ast & \ast & \ast & \ast & \\
+									& \ast & \ast & \ast & \ast \\
+									& & & \ast & \ast \\
+									\end{pmatrix}
+									\]
+								</td>
+							</tr>
+						</table>
+					</div>
+
+					<div class="typesetting">
+						<ul class="white">
+							<li>
+								Spaces like $M_{\Gamma,\lambda}$ appeared in the literature
+								(<span class="yellow">de Mari</span>, etc.)
+							</li>
+							<li>
+								A.-Buchtaber'21 noticed that $M_{\Gamma,\lambda}$ shares many common properties
+								with corresponding regular semisimple Hessenberg varieties. We called them
+								<span class="red">twins</span>.
+							</li>
+							<li>
+								Using Morse theory, we proved that $M_{\Gamma,\lambda}$
+								<span class="blue">admits even-dimensional cell structure</span>.
+							</li>
+							<li>
+								Hence $M_{\Gamma,\lambda}$ is <span class="neon">equivariantly formal</span>.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</section>
+
+			<section>
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="neon">
+						Examples: arrowhead
+					</h2>
+				</div>
+
+				<div class="fragment" style="margin-bottom:30px;">
+					<div class="typesetting">
+						<table style="font-size: 20px;">
+							<tr>
+								<td><img src="pics/clawGreen.png" /></td>
+								<td>$\Rightarrow$</td>
+								<td>
+									\[
+									\begin{pmatrix}
+									\ast & \ast & \ast & \ast \\
+									\ast & \ast &  &  \\
+									\ast &  & \ast &  \\
+									\ast &  &  & \ast
+									\end{pmatrix}
+									\]
+								</td>
+							</tr>
+							<tr>
+								<td>Star graph $St_n$</td>
+								<td></td>
+								<td>Arrowhead matrix</td>
+							</tr>
+						</table>
+					</div>
+					<div class="typesetting">
+						<ul class="white">
+							<li>
+								Torus action has complexity $0$. This is a <span class="blue">torus manifold</span>.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<table class="fragment" style="margin-bottom: 20px;">
+					<tr class="white">
+						<td class="typesetting" style="width:650px; text-align:left;">
+							<div class="r-frame" style="margin-bottom: 15px;">
+								<span class="red">Theorem (Gal-Januszkiewicz, unpublished):</span>
+								$M_{St_3,\lambda}/T$ is a solid torus with boundary subdivided into hexagons.
+							</div>
+							Therefore, from <span class="yellow">Masuda-Panov theorem</span> it follows that <br />
+							<span class="red">$M_{St_3,\lambda}$ is not equivariantly formal</span>.
+						</td>
+						<td>
+							<div class="r-frame">
+								<img src="pics/animatedTorus.gif" style="width:200px;">
+							</div>
+						</td>
+					</tr>
+				</table>
+
+				<!--<div class="fragment">
+					<div class="typesetting">
+						<ul class="white">
+							<li>
+								A.-Buchstaber computed Betti numbers in the simplest case
+								\[
+								\beta(M_{St_3,\lambda})=(1,1,12,0,12,1,1).
+								\]
+							</li>
+							<li>
+								We also described homotopy type of $M_{St_n,\lambda}/T$ for any star graph $St_n$.
+							</li>
+							<li>
+								$M_{St_n,\lambda}$ is not formal for $n\geqslant 3$.
+							</li>
+						</ul>
+					</div>
+				</div>-->
+			</section>
+
+			<section>
+				<div class="r-frame" style="margin-bottom:20px; margin-top:25px;">
+					<h2 class="neon">
+						Examples: periodic tridiagonal
+					</h2>
+				</div>
+
+				<div class="fragment" style="margin-bottom:30px;">
+					<div class="typesetting">
+						<table style="font-size: 20px;">
+							<tr>
+								<td><img src="pics/cycleGreen.png" /></td>
+								<td>$\Rightarrow$</td>
+								<td>
+									\[
+									\begin{pmatrix}
+									\ast & \ast &  &  & \ast\\
+									\ast & \ast & \ast &  &  \\
+									& \ast & \ast & \ast &  \\
+									&  & \ast & \ast & \ast \\
+									\ast &  &  & \ast & \ast
+									\end{pmatrix}
+									\]
+								</td>
+							</tr>
+							<tr>
+								<td>Cycle graph $Cy_n$</td>
+								<td></td>
+								<td>Periodic tridiag-<br />onal matrix</td>
+							</tr>
+						</table>
+					</div>
+					<div class="typesetting">
+						<ul class="white">
+							<li>
+								Torus action of <span class="blue">complexity $1$ in general position</span>.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="fragment" style="margin-bottom:20px;">
+					<div class="typesetting">
+						<ul class="white">
+							<li>
+								<span class="yellow">A.'20:</span> $M_{Cy_n,\lambda}$
+								<span class="red">is not equivariantly formal</span> for $n\geqslant 4$.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="r-stack">
+					<div class="fragment fade-in-then-out">
+						<div class="typesetting">
+							<ul class="white">
 								<li>
-									Continuous version of QR-algorithm.
-								</li>
-								<li>
-									Same properties.
-								</li>
-								<li>
-									Honest <span class="white">gradient flow of a Morse function</span>.
+									$\pi_1(M_{Cy_n,\lambda})\cong \mathbb{Z}^{n-3}$ (if $M_{Cy_n,\lambda}$ is smooth).
 								</li>
 							</ul>
 						</div>
-					</div>
-
-
-				</section>
-
-				<section class="white">
-					<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
-						<h2 class="neon">
-							How we prove:
-						</h2>
 					</div>
 
 					<div class="white">
-						<div class="fragment" style="margin-bottom: 20px;">
+						<div class="fragment">
 							<div class="typesetting">
-								We need to prove
-								<p>
-									<span class="neon">"$\Gamma$ is not an indifference graph"</span>
-									$\Rightarrow$ <span class="blue">"$M_{\Gamma,\lambda}$ is not formal"</span>.
+								<div class="r-frame" style="margin-bottom:20px;">
+									<span class="red">A.-Masuda'19:</span> If there is an equivariantly formal torus action of complexity $1$
+									in general position on $X$, then $X/T$ is a <span class="blue">homology sphere</span>.
+								</div>
+								<p style="text-align:center;">
+									But I proved: $M_{Cy_n,\lambda}/T\cong S^4\times T^{n-3}$.
 								</p>
 							</div>
 						</div>
+					</div>
+				</div>
 
-						<div class="fragment" style="margin-bottom:20px;">
-							<div class="typesetting">
-								<div class="r-frame">
-									<span class="red">Lemma:</span> If $M_{\Gamma,\lambda}$ is formal and
-									$\Gamma'$ is an induced subgraph of $\Gamma$, then $M_{\Gamma',\lambda}$ is also formal.
-								</div>
-							</div>
+			</section>
+
+			<section>
+
+				<div class="r-frame" style="margin-bottom:10px; margin-top:25px;">
+					<h2 class="white">
+						Indifference graphs:
+					</h2>
+				</div>
+
+				<div class="fragment">
+					<div class="typesetting" style="margin-bottom:20px;">
+						<p>
+							Which graphs correspond to staircase matrices?
+						</p>
+					</div>
+				</div>
+
+				<div class="fragment" style="margin-bottom:20px;">
+					<div class="typesetting">
+						<p class="r-frame" style="margin-bottom:15px;">
+							<span class="white">Definition:</span> Graph $\Gamma$ is called
+							<span class="blue">indifference graph</span> if it is the intersection graph
+							of some collection of unit intervals on a line $\mathbb{R}$.
+						</p>
+						<div style="text-align: center;">
+							<img src="pics/intersections.png" />
+						</div>
+						<p>
+							Also called <span class="blue">unit interval</span> graphs or
+							<span class="blue">proper interval</span> graphs.
+						</p>
+					</div>
+				</div>
+				<div class="fragment">
+					<div class="typesetting">
+						<div class="r-frame">
+							<span class="white">Theorem (Mertzios'08): </span>
+							$\Gamma$ represents staircase matrices $\Leftrightarrow$ $\Gamma$ is an indifference graph.
+						</div>
+						<table style="font-size: 20px;">
+							<tr>
+								<td><img src="pics/intersections2.png" /></td>
+								<td>$\Rightarrow$</td>
+								<td>
+									\[
+									\begin{pmatrix}
+									\ast & \ast & \ast & & \\
+									\ast & \ast & \ast & \ast & \\
+									\ast & \ast & \ast & \ast & \\
+									& \ast & \ast & \ast & \ast \\
+									& & & \ast & \ast \\
+									\end{pmatrix}
+									\]
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+			</section>
+
+			<section>
+				<div class="r-frame" style="margin-bottom:120px; margin-top:25px;">
+					<h2 class="neon">
+						Warning:
+					</h2>
+				</div>
+
+
+				<div class="fragment">
+					<div class="typesetting">
+						<div class="white">
+							Some matrices are staircase even if they don't look so:
+						</div>
+
+						<table style="font-size: 20px;">
+							<tr>
+								<td><img src="pics/pathBad.png" /></td>
+								<td>$\Rightarrow$</td>
+								<td>
+									\[
+									\begin{pmatrix}
+									\ast & \ast & \ast \\
+									\ast & \ast &   \\
+									\ast &  &  \ast
+									\end{pmatrix}
+									\]
+								</td>
+								<td></td>
+								<td><img src="pics/pathGood.png" /></td>
+								<td>$\Rightarrow$</td>
+								<td>
+									\[
+									\begin{pmatrix}
+									\ast & \ast &  \\
+									\ast & \ast & \ast  \\
+									& \ast & \ast
+									\end{pmatrix}
+									\]
+								</td>
+							</tr>
+						</table>
+
+						<div class="white">
+							Spaces $M_{\Gamma,\lambda}$ in these two cases are homeomorphic. The space depends only on a graph.
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="white">
+				<div class="r-frame" style="margin-bottom:5px; margin-top:25px;">
+					<h2 class="neon">
+						Result
+					</h2>
+				</div>
+
+				<div class="fragment" style="margin-bottom: 30px; margin-top: 20px;">
+					<div class="typesetting">
+						For any graph $\Gamma$ on $n$ vertices we have:
+						<ul>
+							<li>
+								$T$-action on $M_{\Gamma,\lambda}$ has <span class="blue">$n!$ many fixed points</span>,
+							</li>
+							<li>
+								therefore $\beta_{even}-\beta_{odd}=\chi(M_{\Gamma,\lambda})=n!$,
+							</li>
+							<li>
+								therefore $\beta(M_{\Gamma,\lambda})\geqslant n!$.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+
+				<div class="fragment" style="margin-bottom: 30px; text-align:center;">
+					<div class="r-frame">
+						<div class="typesetting">
+							<h3>
+								<span class="red">
+									Theorem:
+								</span> The following conditions are equivalent:
+								<ol class="white">
+									<li>
+										$\Gamma$ is an indifference graph,
+									</li>
+									<li>
+										$M_{\Gamma,\lambda}$ is equivariantly formal;
+									</li>
+									<li>
+										$\beta(M_{\Gamma,\lambda})=n!$.
+									</li>
+								</ol>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="white">
+				<div class="r-frame" style="margin-bottom:120px; margin-top:25px;">
+					<h2 class="neon">
+						Topological complexity
+					</h2>
+				</div>
+
+
+				<div class="fragment" style="margin-bottom: 60px; text-align:center;">
+					<div class="typesetting">
+						<h3 class="r-frame" style="margin-bottom: 70px;">
+							<span class="red">
+								Corollary:
+							</span> If $\Gamma$ is not indifference, then
+							<ul>
+								<li>
+									$\beta(M_{\Gamma,\lambda})>n!$, hence
+								</li>
+								<li>
+									any <span class="blue">Morse-Smale flow</span> on $M_{\Gamma,\lambda}$ has $>n!$ stationary points.
+								</li>
+							</ul>
+						</h3>
+						<div>
+							This gives an <span class="yellow">applied math intuition</span> behind this result.
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="QRalgorithm">
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="yellow">
+						QR-algorithm
+					</h2>
+				</div>
+
+				<table style="margin-bottom:30px;">
+					<tr>
+						<td> Original matrix:  </td>
+						<td>
+							<table id="matrixFormQR" class="rectMatrix">
+								<tr>
+									<td><input type="text" id="a11" placeholder="1" name="a11" autocomplete="off"></td>
+									<td><input type="text" id="a12" placeholder="0" name="a12" autocomplete="off"></td>
+									<td><input type="text" id="a13" placeholder="0" name="a13" autocomplete="off"></td>
+									<td><input type="text" id="a14" placeholder="0" name="a14" autocomplete="off"></td>
+								</tr>
+								<tr>
+									<td id="a21">0</td>
+									<td><input type="text" id="a22" placeholder="1" name="a22" autocomplete="off"></td>
+									<td><input type="text" id="a23" placeholder="0" name="a23" autocomplete="off"></td>
+									<td><input type="text" id="a24" placeholder="0" name="a24" autocomplete="off"></td>
+								</tr>
+								<tr>
+									<td id="a31">0</td>
+									<td id="a32">0</td>
+									<td><input type="text" id="a33" placeholder="1" name="a33" autocomplete="off"></td>
+									<td><input type="text" id="a34" placeholder="0" name="a34" autocomplete="off"></td>
+								</tr>
+								<tr>
+									<td id="a41">0</td>
+									<td id="a42">0</td>
+									<td id="a43">0</td>
+									<td><input type="text" id="a44" placeholder="1" name="a44" autocomplete="off"></td>
+								</tr>
+							</table>
+						</td>
+
+						<td>&nbsp;</td>
+						<td width="400" style="text-align:left;">
+							At each step we represent a matrix $A_i$ as $Q\cdot R$
+							and take $A_{i+1}=R\cdot Q$. Here $Q$ is orgthogonal, $R$ is upper triangular.
+						</td>
+					</tr>
+				</table>
+
+				<table style="margin-bottom:30px;">
+					<tr>
+						<td style="text-align:right;">
+							Fill in the matrix above.<br />
+							Press <a onclick="resetMatrixFromForm();" class="blue">"u"</a> to upload.<br />
+							Press <a onclick="showQRMatrix();" class="white">"q"</a> to make QR step.<br /><br />
+							After <span class="blue" id="numberOfIters"> 0 </span> iterations:
+						</td>
+						<td>
+							<table id="iteratedMatrix" class="rectMatrix">
+								<tr>
+									<td>*</td>
+									<td>*</td>
+									<td>*</td>
+									<td>*</td>
+								</tr>
+								<tr>
+									<td>*</td>
+									<td>*</td>
+									<td>*</td>
+									<td>*</td>
+								</tr>
+								<tr>
+									<td>*</td>
+									<td>*</td>
+									<td>*</td>
+									<td>*</td>
+								</tr>
+								<tr>
+									<td>*</td>
+									<td>*</td>
+									<td>*</td>
+									<td>*</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+
+			</section>
+
+			<section id="QRalgorithm">
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="yellow">
+						QR-algorithm
+					</h2>
+				</div>
+
+
+				<div class="fragment" style="margin-bottom:30px;">
+					<div class="typesetting">
+						<ul>
+							<li>
+								QR-algorithm preserves spectrum and symmetricity.
+							</li>
+							<li>
+								It has $n!$ limit points (diagonal matrices with spectrum at the diagonal).
+							</li>
+							<li>
+								It is a <span class="white">Morse-Smale cascade</span> on $M_\lambda$.
+							</li>
+							<li>
+								QR-algorithm preserves staircase shape.
+							</li>
+							<li>
+								It is a flow on $M_{\Gamma,\lambda}$ for indifference graph $\Gamma$.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="fragment">
+					<div class="typesetting">
+						<div class="r-frame" style="margin-bottom:30px; margin-top:10px;">
+							<h2 class="yellow">
+								Toda flow
+							</h2>
+						</div>
+						<ul>
+							<li>
+								Continuous version of QR-algorithm.
+							</li>
+							<li>
+								Same properties.
+							</li>
+							<li>
+								Honest <span class="white">gradient flow of a Morse function</span>.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+
+			</section>
+
+			<section class="white">
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="neon">
+						How we prove:
+					</h2>
+				</div>
+
+				<div class="white">
+					<div class="fragment" style="margin-bottom: 20px;">
+						<div class="typesetting">
+							We need to prove
+							<p>
+								<span class="neon">"$\Gamma$ is not an indifference graph"</span>
+								$\Rightarrow$ <span class="blue">"$M_{\Gamma,\lambda}$ is not formal"</span>.
+							</p>
 						</div>
 					</div>
 
+					<div class="fragment" style="margin-bottom:20px;">
+						<div class="typesetting">
+							<div class="r-frame">
+								<span class="red">Lemma:</span> If $M_{\Gamma,\lambda}$ is formal and
+								$\Gamma'$ is an induced subgraph of $\Gamma$, then $M_{\Gamma',\lambda}$ is also formal.
+							</div>
+						</div>
+					</div>
+				</div>
 
-					<div class="fragment">
-						<div class="typesetting" style="margin-bottom:20px;">
-							<table class="neon">
+
+				<div class="fragment">
+					<div class="typesetting" style="margin-bottom:20px;">
+						<table class="neon">
+							<tr>
+								<td>
+									<img src="pics/induced2.png">
+								</td>
+								<td>
+									<img src="pics/noninduced2.png">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Induced
+								</td>
+								<td>
+									Not induced
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="fragment" style="margin-bottom:30px;">
+					<div class="typesetting">
+						<div class="r-frame">
+							<span class="red">Conclusion:</span> we only need to prove non-formality
+							for <span class="blue">"minimal"</span> non-indifference graphs.
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+			<section>
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="neon">
+						How we prove:
+					</h2>
+				</div>
+
+
+				<div class="fragment">
+					<div class="typesetting" style="margin-bottom: 30px;">
+						<div class="r-frame">
+							<span class="white">Theorem (Roberts'70):</span> $\Gamma$ is not an indifference graph
+							$\Leftrightarrow$ it has one of the following induced subgraphs:
+							<table>
 								<tr>
 									<td>
-										<img src="pics/induced2.png">
+										<img src="pics/robertsClaw.png">
 									</td>
 									<td>
-										<img src="pics/noninduced2.png">
+										<img src="pics/robertsCy.png">
+									</td>
+									<td>
+										<img src="pics/robertsNet.png">
+									</td>
+									<td>
+										<img src="pics/robertsSun.png">
 									</td>
 								</tr>
 								<tr>
 									<td>
-										Induced
+										Claw $St_3$
 									</td>
 									<td>
-										Not induced
+										Holes $Cy_k$, $k\geq 4$
+									</td>
+									<td>
+										$Net$
+									</td>
+									<td>
+										$Sun$
 									</td>
 								</tr>
 							</table>
 						</div>
-					</div>
 
-					<div class="fragment" style="margin-bottom:30px;">
+					</div>
+				</div>
+
+				<div class="white" style="margin-bottom:20px;">
+					<div class="fragment">
 						<div class="typesetting">
 							<div class="r-frame">
 								<span class="red">Conclusion:</span> we only need to prove non-formality
-								for <span class="blue">"minimal"</span> non-indifference graphs.
+								for this list of forbidden graphs.
 							</div>
 						</div>
 					</div>
+				</div>
 
-				</section>
+				<div class="fragment" style="margin-bottom:20px;">
+					<ul class="typesetting">
+						<li class="white">
+							<span class="blue">Claw $St_3$</span> and <span class="blue">Holes $Cy_n$ ($n\geqslant 4$)</span>
+							are already studied: non-formality of $M_{\Gamma,\lambda}$ is proved.
+						</li>
+						<li class="white">
+							It remains to prove non-formality for
+							<span class="blue">$Net$</span> and <span class="blue">$Sun$</span>.
+						</li>
+					</ul>
+				</div>
 
-				<section>
-					<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
-						<h2 class="neon">
-							How we prove:
-						</h2>
+				<div class="fragment" style="margin-bottom:30px;">
+					<div class="typesetting">
+						<p class="white" style="text-align:center;">
+							To do this, we developed a <span class="red">general approach</span>.
+						</p>
+
+					</div>
+				</div>
+
+			</section>
+
+			<section class="white">
+
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="white">
+						Face submanifolds:
+					</h2>
+				</div>
+
+				<ul class="fragment" style="margin-bottom:20px;">
+					<li class="typesetting">
+						Let $H\subseteq T$ be a connected subgroup.
+					</li>
+				</ul>
+
+				<div class="fragment">
+					<div class="typesetting" style="margin-bottom:30px;">
+						<div class="r-frame">
+							<span class="red">Definition:</span>
+							<ul>
+								<li>
+									A connected component of the fixed point manifold $X^H$
+									is called <span class="blue">an invariant submanifold</span>.
+								</li>
+								<li>
+									If an invariant submanifold intersects $X^T$,
+									it is called <span class="blue">a face submanifold</span>.
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<ul class="fragment">
+					<li class="typesetting">
+						The rank of an invariant (face) submanifold $Y$ is the dimension of generic
+						toric orbit on $Y$.
+					</li>
+					<li class="typesetting">
+						Face submanifolds are partially ordered by inclusion.
+					</li>
+				</ul>
+
+				<div class="r-stack">
+					<div class="fragment fade-in-then-out">
+						<div class="typesetting">
+							<ul>
+								<li>
+									Fixed points = face submanifolds of rank $0$.
+								</li>
+								<li>
+									The greatest face submanifold is $X$ itself. It has rank $\dim T$.
+								</li>
+							</ul>
+						</div>
 					</div>
 
-
-					<div class="fragment">
-						<div class="typesetting" style="margin-bottom: 30px;">
+					<div class="fragment" style="margin-top:30px;">
+						<div class="typesetting">
 							<div class="r-frame">
-								<span class="white">Theorem (Roberts'70):</span> $\Gamma$ is not an indifference graph
-								$\Leftrightarrow$ it has one of the following induced subgraphs:
+								<span class="red">Definition:</span>
+								The poset of all face submanifolds is denoted $S(X)$. It is graded by ranks.
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+
+			<section class="white">
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="white">
+						Face poset and formality
+					</h2>
+				</div>
+
+				<ul class="fragment">
+					<li class="typesetting">
+						$S(X)_r$ : the <span class="blue">$r$-skeleton</span>, the poset
+						of all face submanifolds of rank $\leqslant r$.
+					</li>
+				</ul>
+
+				<ul class="fragment">
+					<li class="typesetting">
+						We say a $T$-action has <span class="blue">GKM type</span> if every face submanifold of rank $1$ is a $2$-sphere.
+					</li>
+					<li class="typesetting">
+						Every $M_{\Gamma,\lambda}$ has GKM type.
+					</li>
+				</ul>
+
+				<ul class="fragment" style="margin-bottom:30px;">
+					<li class="typesetting">
+						Let $|S|$ denote the geometrical realization of a poset $S$.
+					</li>
+				</ul>
+
+				<div class="fragment" style="margin-bottom:15px;">
+					<div class="typesetting">
+						<div class="r-frame">
+							<div class="red">Theorem (A.-Masuda-Solomadin'22):</div>
+							Assume an $T$-action on $X$ is equivariantly formal and $\dim T\geqslant 4$.
+							Then for any $r\geqslant 4$ we have
+							\[
+							\tilde{H}^i(|S(X)_r|)=0 \quad\text{ for }\quad i\leq 3.
+							\]
+							In other words, the skeleton <span class="blue">$|S(X)_r|$ is $3$-acyclic</span>.
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+
+
+			<section class="white">
+				<div class="r-frame" style="margin-bottom:5px; margin-top:25px;">
+					<table style="font-size:20px;">
+						<tr>
+							<td>
+								<h2 class="white">
+									Cases:
+								</h2>
+							</td>
+							<td>
 								<table>
 									<tr>
-										<td>
-											<img src="pics/robertsClaw.png">
-										</td>
-										<td>
-											<img src="pics/robertsCy.png">
-										</td>
 										<td>
 											<img src="pics/robertsNet.png">
 										</td>
@@ -1226,1131 +1416,941 @@
 									</tr>
 									<tr>
 										<td>
-											Claw $St_3$
+											<h2 class="white">
+												$Net$
+											</h2>
 										</td>
 										<td>
-											Holes $Cy_k$, $k\geq 4$
-										</td>
-										<td>
-											$Net$
-										</td>
-										<td>
-											$Sun$
+											<h2 class="white">
+												$Sun$
+											</h2>
 										</td>
 									</tr>
 								</table>
-							</div>
-
-						</div>
-					</div>
-
-					<div class="white" style="margin-bottom:20px;">
-						<div class="fragment">
-							<div class="typesetting">
-								<div class="r-frame">
-									<span class="red">Conclusion:</span> we only need to prove non-formality
-									for this list of forbidden graphs.
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="fragment" style="margin-bottom:20px;">
-						<ul class="typesetting">
-							<li class="white">
-								<span class="blue">Claw $St_3$</span> and <span class="blue">Holes $Cy_n$ ($n\geqslant 4$)</span>
-								are already studied: non-formality of $M_{\Gamma,\lambda}$ is proved.
-							</li>
-							<li class="white">
-								It remains to prove non-formality for
-								<span class="blue">$Net$</span> and <span class="blue">$Sun$</span>.
-							</li>
-						</ul>
-					</div>
-
-					<div class="fragment" style="margin-bottom:30px;">
-						<div class="typesetting">
-							<p class="white" style="text-align:center;">
-								To do this, we developed a <span class="red">general approach</span>.
-							</p>
-
-						</div>
-					</div>
-
-				</section>
-
-				<section class="white">
-
-					<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
-						<h2 class="white">
-							Face submanifolds:
-						</h2>
-					</div>
-
-					<ul class="fragment" style="margin-bottom:20px;">
-						<li class="typesetting">
-							Let $H\subseteq T$ be a connected subgroup.
-						</li>
-					</ul>
-
-					<div class="fragment">
-						<div class="typesetting" style="margin-bottom:30px;">
-							<div class="r-frame">
-								<span class="red">Definition:</span>
-								<ul>
-									<li>
-										A connected component of the fixed point manifold $X^H$
-										is called <span class="blue">an invariant submanifold</span>.
-									</li>
-									<li>
-										If an invariant submanifold intersects $X^T$,
-										it is called <span class="blue">a face submanifold</span>.
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<ul class="fragment">
-						<li class="typesetting">
-							The rank of an invariant (face) submanifold $Y$ is the dimension of generic
-							toric orbit on $Y$.
-						</li>
-						<li class="typesetting">
-							Face submanifolds are partially ordered by inclusion.
-						</li>
-					</ul>
-
-					<div class="r-stack">
-						<div class="fragment fade-in-then-out">
-							<div class="typesetting">
-								<ul>
-									<li>
-										Fixed points = face submanifolds of rank $0$.
-									</li>
-									<li>
-										The greatest face submanifold is $X$ itself. It has rank $\dim T$.
-									</li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="fragment" style="margin-top:30px;">
-							<div class="typesetting">
-								<div class="r-frame">
-									<span class="red">Definition:</span>
-									The poset of all face submanifolds is denoted $S(X)$. It is graded by ranks.
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</section>
-
-
-				<section class="white">
-					<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
-						<h2 class="white">
-							Face poset and formality
-						</h2>
-					</div>
-
-					<ul class="fragment">
-						<li class="typesetting">
-							$S(X)_r$ : the <span class="blue">$r$-skeleton</span>, the poset
-							of all face submanifolds of rank $\leqslant r$.
-						</li>
-					</ul>
-
-					<ul class="fragment">
-						<li class="typesetting">
-							We say a $T$-action has <span class="blue">GKM type</span> if every face submanifold of rank $1$ is a $2$-sphere.
-						</li>
-						<li class="typesetting">
-							Every $M_{\Gamma,\lambda}$ has GKM type.
-						</li>
-					</ul>
-
-					<ul class="fragment" style="margin-bottom:30px;">
-						<li class="typesetting">
-							Let $|S|$ denote the geometrical realization of a poset $S$.
-						</li>
-					</ul>
-
-					<div class="fragment" style="margin-bottom:15px;">
-						<div class="typesetting">
-							<div class="r-frame">
-								<div class="red">Theorem (A.-Masuda-Solomadin'22):</div>
-								Assume an $T$-action on $X$ is equivariantly formal and $\dim T\geqslant 4$.
-								Then for any $r\geqslant 4$ we have
-								\[
-								\tilde{H}^i(|S(X)_r|)=0 \quad\text{ for }\quad i\leq 3.
-								\]
-								In other words, the skeleton <span class="blue">$|S(X)_r|$ is $3$-acyclic</span>.
-							</div>
-						</div>
-					</div>
-
-				</section>
-
-
-
-				<section class="white">
-					<div class="r-frame" style="margin-bottom:5px; margin-top:25px;">
-						<table style="font-size:20px;">
-							<tr>
-								<td>
-									<h2 class="white">
-										Cases:
-									</h2>
-								</td>
-								<td>
-									<table>
-										<tr>
-											<td>
-												<img src="pics/robertsNet.png">
-											</td>
-											<td>
-												<img src="pics/robertsSun.png">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<h2 class="white">
-													$Net$
-												</h2>
-											</td>
-											<td>
-												<h2 class="white">
-													$Sun$
-												</h2>
-											</td>
-										</tr>
-									</table>
-								</td>
-								<td>
-									\[
-									\begin{pmatrix}
-									\ast & \ast & \ast & \ast &  &  \\
-									\ast & \ast & \ast &  & \ast &  \\
-									\ast & \ast & \ast &  &  & \ast \\
-									\ast &   &  & \ast &  & \\
-									& \ast &  &  & \ast &  \\
-									&  & \ast &  &  & \ast \\
-									\end{pmatrix},
-									\begin{pmatrix}
-									\ast & \ast & \ast &  & \ast & \ast \\
-									\ast & \ast & \ast & \ast &  &  \ast\\
-									\ast & \ast & \ast & \ast & \ast &  \\
-									& \ast  & \ast & \ast &  & \\
-									\ast&  & \ast &  & \ast &  \\
-									\ast & \ast &  &  &  & \ast \\
-									\end{pmatrix}
-									\]
-								</td>
-							</tr>
-						</table>
-					</div>
-
-					<div class="r-stack" style="margin-bottom:5px; text-align:left;">
-						<div class="fragment fade-in-then-out">
-							<div class="typesetting">
-								$M_{Net,\lambda}$ is $12$-dim manifold with $5$-dim torus action.
-							</div>
-						</div>
-						<div class="fragment fade-in-then-out">
-							<div class="typesetting">
-								$M_{Sun,\lambda}$ is $18$-dim with $5$-dim torus action.
-							</div>
-						</div>
-						<div class="fragment">
-							<div class="typesetting">
-								It is impossible to compute $H^{odd}$ of these spaces...
-							</div>
-						</div>
-
-					</div>
-					<div class="fragment" style="margin-bottom:20px;">
-						<div class="typesetting">
-							...however, we can describe the poset $S(M_{\Gamma,\lambda})$ and compute its homology
-							in low degrees.
-						</div>
-					</div>
-
-
-
-					<div class="fragment">
-						<div class="typesetting">
-							<div class="yellow" style="margin-bottom:20px; text-align:center;">So we did the following:</div>
-							<ul>
-								<li>
-									<span class="red">A.-Buchstaber'22:</span> Described the poset
-									<span class="blue">$S(M_{\Gamma,\lambda})$</span>.
-									It is isomorphic to
-									<span class="neon">the core</span>
-									of <span class="neon">the graphicahedron</span> of $\Gamma$.
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<ul class="fragment" style="margin-bottom:15px;">
-						<li class="typesetting">
-							Assumption $M_{Net,\lambda}$ and $M_{Sun,\lambda}$ are formal, implies
-							$|S(M_{Net,\lambda})_4|$ and $|S(M_{Sun,\lambda})_4|$ are 3-acyclic.
-						</li>
-						<li class="typesetting">
-							So we tried to check, whether this is true.
-						</li>
-					</ul>
-
-				</section>
-
-				<section class="white">
-					<div class="r-frame" style="margin-bottom:45px; margin-top:25px;">
-						<table style="font-size:20px;">
-							<tr>
-								<td>
-									<h2 class="white">
-										Cases:
-									</h2>
-								</td>
-								<td>
-									<table>
-										<tr>
-											<td>
-												<img src="pics/robertsNet.png">
-											</td>
-											<td>
-												<img src="pics/robertsSun.png">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<h2 class="white">
-													$Net$
-												</h2>
-											</td>
-											<td>
-												<h2 class="white">
-													$Sun$
-												</h2>
-											</td>
-										</tr>
-									</table>
-								</td>
-								<td>
-									\[
-									\begin{pmatrix}
-									\ast & \ast & \ast & \ast &  &  \\
-									\ast & \ast & \ast &  & \ast &  \\
-									\ast & \ast & \ast &  &  & \ast \\
-									\ast &   &  & \ast &  & \\
-									& \ast &  &  & \ast &  \\
-									&  & \ast &  &  & \ast \\
-									\end{pmatrix},
-									\begin{pmatrix}
-									\ast & \ast & \ast &  & \ast & \ast \\
-									\ast & \ast & \ast & \ast &  &  \ast\\
-									\ast & \ast & \ast & \ast & \ast &  \\
-									& \ast  & \ast & \ast &  & \\
-									\ast&  & \ast &  & \ast &  \\
-									\ast & \ast &  &  &  & \ast \\
-									\end{pmatrix}
-									\]
-								</td>
-							</tr>
-						</table>
-					</div>
-
-					<div class="fragment" style="margin-bottom:30px;">
-						<div class="typesetting" style="margin-bottom: 30px;">
-							We unpacked our computers, ran <span class="yellow">Sage</span>, and calculated:
-						</div>
-						<div class="typesetting">
-							<div class="r-frame">
-								<span class="red">Theorem (A.-Sorokin'22):</span> $|S(M_{Net,\lambda})_4|$ and
-								$|S(M_{Sun,\lambda})_4|$ are 2-acyclic.
-								But <span class="yellow">$\beta_3(|S(M_{Net,\lambda})_4|)=5$</span>
-								and <span class="yellow">$\beta_3(|S(M_{Sun,\lambda})_4|)=5$</span>.
-								<span class="neon">*Coefficients in $\mathbb{Z}_2$</span>.
-							</div>
-						</div>
-					</div>
-
-					<div class="fragment" style="margin-bottom:30px;">
-						<div class="typesetting">
-							<div style="margin-bottom:20px;">
-								Since face posets are not $3$-acyclic, manifolds are not equivariantly formal.
-							</div>
-							<div class="rainbow" style="text-align:center;">
-								This finalizes the proof of the main theorem.
-							</div>
-						</div>
-					</div>
-
-				</section>
-
-
-
-				<section style="text-align:center;">
-					<div class="fragment" style="margin-bottom:30px; margin-top:200px;">
-						<div class="typesetting">
-							<h2 class="neon">
-								Thank you for your attention!
-							</h2>
-						</div>
-					</div>
-				</section>
-
-				<section class="white" style="font-size:20px;">
-					<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
-						<h2 class="white">
-							Our papers related to this work:
-						</h2>
-					</div>
-					<ol class="fragment" style="margin-bottom:15px;">
-						<li class="typesetting" style="margin-bottom:10px;">
-							<span class="blue">A.A.Ayzenberg, V.M.Buchstaber</span>, Manifolds of isospectral arrow matrices, Sbornik: Mathematics 212:5 (2021), 3-36.
-							<a href="https://arxiv.org/abs/1803.10449">[link]</a>
-						</li>
-						<li class="typesetting" style="margin-bottom:10px;">
-							<span class="blue">A.A.Ayzenberg, V.M.Buchstaber</span>, Manifolds of isospectral matrices and Hessenberg varieties, IMRN 2021:21 (2021), 16671-16692.
-							<a href="https://arxiv.org/abs/1803.01132">[link]</a>
-						</li>
-						<li class="typesetting" style="margin-bottom:10px;">
-							<span class="blue">A.Ayzenberg</span>, Space of isospectral periodic tridiagonal matrices, Alg. and Geom. Topology 20 (2020), 2957-2994.
-							<a href="https://arxiv.org/abs/1803.11433">[link]</a>
-						</li>
-						<li class="typesetting" style="margin-bottom:10px;">
-							<span class="blue">A.Ayzenberg, M.Masuda</span>, Orbit spaces of equivariantly formal torus actions, Transformation Groups, 2023, preprint.
-							<a href="https://arxiv.org/abs/1912.11696">[link]</a>
-						</li>
-						<li class="typesetting" style="margin-bottom:10px;">
-							<span class="blue">A.Ayzenberg, V.Cherepanov</span>, Matroids in toric topology, 2022,
-							<a href="https://arxiv.org/abs/2203.06282">[preprint].</a>
-						</li>
-						<li class="typesetting" style="margin-bottom:10px;">
-							<span class="blue">A.Ayzenberg, M.Masuda, G.Solomadin</span>, How is a graph not like a manifold?, to appear in Sbornik: Mathematics
-							<a href="https://arxiv.org/abs/2203.10641">[link].</a>
-						</li>
-						<li class="typesetting" style="margin-bottom:10px;">
-							<span class="blue">A.Ayzenberg, V.Buchstaber</span>, Cluster-permutohedra and submanifolds of flag varieties with torus actions, IMRN 2023
-							<a href="https://arxiv.org/abs/2203.14133">[link].</a>
-						</li>
-						<li class="typesetting" style="margin-bottom:10px;">
-							<span class="blue">A.Ayzenberg, K.Sorokin</span>, Topological approach to diagonalization algorithms, 2022, preprint.
-							<a href="https://arxiv.org/abs/2204.06111">[preprint].</a>
-						</li>
-					</ol>
-					<!--<div class="fragment">
-			<div class="typesetting">
-				<div class="yellow">
-					An extended version of this presentation is available
-					<a href="https://antonayzenberg.github.io/toric-diagonalization-slides.github.io/">here</a>.
-					Its source code and instructions on usage lie on
-					<a href="https://github.com/AntonAyzenberg/toric-diagonalization-slides.github.io">Github</a>.
-				</div>
-			</div>
-		</div>-->
-				</section>
-
-
-				<section class="yellow">
-					<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
-						<h2 class="neon">
-							Technical reference:
-						</h2>
-					</div>
-
-					<table class="fragment">
-						<tr class="typesetting">
-							<td>
-								An extended version of this presentation is available
-								<a href="https://antonayzenberg.github.io/toric-diagonalization-slides.github.io/">here</a>.
-								<img src="pics/QRslides.png" width="300px" />
 							</td>
 							<td>
-								Source code and instructions on usage lie on
-								<a href="https://github.com/AntonAyzenberg/toric-diagonalization-slides.github.io">Github</a>.
-								<img src="pics/QRgithub.png" width="300px" />
+								\[
+								\begin{pmatrix}
+								\ast & \ast & \ast & \ast &  &  \\
+								\ast & \ast & \ast &  & \ast &  \\
+								\ast & \ast & \ast &  &  & \ast \\
+								\ast &   &  & \ast &  & \\
+								& \ast &  &  & \ast &  \\
+								&  & \ast &  &  & \ast \\
+								\end{pmatrix},
+								\begin{pmatrix}
+								\ast & \ast & \ast &  & \ast & \ast \\
+								\ast & \ast & \ast & \ast &  &  \ast\\
+								\ast & \ast & \ast & \ast & \ast &  \\
+								& \ast  & \ast & \ast &  & \\
+								\ast&  & \ast &  & \ast &  \\
+								\ast & \ast &  &  &  & \ast \\
+								\end{pmatrix}
+								\]
 							</td>
 						</tr>
 					</table>
+				</div>
+
+				<div class="r-stack" style="margin-bottom:5px; text-align:left;">
+					<div class="fragment fade-in-then-out">
+						<div class="typesetting">
+							$M_{Net,\lambda}$ is $12$-dim manifold with $5$-dim torus action.
+						</div>
+					</div>
+					<div class="fragment fade-in-then-out">
+						<div class="typesetting">
+							$M_{Sun,\lambda}$ is $18$-dim with $5$-dim torus action.
+						</div>
+					</div>
+					<div class="fragment">
+						<div class="typesetting">
+							It is impossible to compute $H^{odd}$ of these spaces...
+						</div>
+					</div>
+
+				</div>
+				<div class="fragment" style="margin-bottom:20px;">
+					<div class="typesetting">
+						...however, we can describe the poset $S(M_{\Gamma,\lambda})$ and compute its homology
+						in low degrees.
+					</div>
+				</div>
 
 
-				</section>
+
+				<div class="fragment">
+					<div class="typesetting">
+						<div class="yellow" style="margin-bottom:20px; text-align:center;">So we did the following:</div>
+						<ul>
+							<li>
+								<span class="red">A.-Buchstaber'22:</span> Described the poset
+								<span class="blue">$S(M_{\Gamma,\lambda})$</span>.
+								It is isomorphic to
+								<span class="neon">the core</span>
+								of <span class="neon">the graphicahedron</span> of $\Gamma$.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<ul class="fragment" style="margin-bottom:15px;">
+					<li class="typesetting">
+						Assumption $M_{Net,\lambda}$ and $M_{Sun,\lambda}$ are formal, implies
+						$|S(M_{Net,\lambda})_4|$ and $|S(M_{Sun,\lambda})_4|$ are 3-acyclic.
+					</li>
+					<li class="typesetting">
+						So we tried to check, whether this is true.
+					</li>
+				</ul>
+
 			</section>
 
-		</div>
+			<section class="white">
+				<div class="r-frame" style="margin-bottom:45px; margin-top:25px;">
+					<table style="font-size:20px;">
+						<tr>
+							<td>
+								<h2 class="white">
+									Cases:
+								</h2>
+							</td>
+							<td>
+								<table>
+									<tr>
+										<td>
+											<img src="pics/robertsNet.png">
+										</td>
+										<td>
+											<img src="pics/robertsSun.png">
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<h2 class="white">
+												$Net$
+											</h2>
+										</td>
+										<td>
+											<h2 class="white">
+												$Sun$
+											</h2>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td>
+								\[
+								\begin{pmatrix}
+								\ast & \ast & \ast & \ast &  &  \\
+								\ast & \ast & \ast &  & \ast &  \\
+								\ast & \ast & \ast &  &  & \ast \\
+								\ast &   &  & \ast &  & \\
+								& \ast &  &  & \ast &  \\
+								&  & \ast &  &  & \ast \\
+								\end{pmatrix},
+								\begin{pmatrix}
+								\ast & \ast & \ast &  & \ast & \ast \\
+								\ast & \ast & \ast & \ast &  &  \ast\\
+								\ast & \ast & \ast & \ast & \ast &  \\
+								& \ast  & \ast & \ast &  & \\
+								\ast&  & \ast &  & \ast &  \\
+								\ast & \ast &  &  &  & \ast \\
+								\end{pmatrix}
+								\]
+							</td>
+						</tr>
+					</table>
+				</div>
 
-		<script src="scripts/reveal.js"></script>
-		<script src="scripts/math.js"></script>
-		<script src="mathHard/math.js" type="text/javascript"></script>
-		<!--<script src="scripts/anythingplugin.js"></script>-->
+				<div class="fragment" style="margin-bottom:30px;">
+					<div class="typesetting" style="margin-bottom: 30px;">
+						We unpacked our computers, ran <span class="yellow">Sage</span>, and calculated:
+					</div>
+					<div class="typesetting">
+						<div class="r-frame">
+							<span class="red">Theorem (A.-Sorokin'22):</span> $|S(M_{Net,\lambda})_4|$ and
+							$|S(M_{Sun,\lambda})_4|$ are 2-acyclic.
+							But <span class="yellow">$\beta_3(|S(M_{Net,\lambda})_4|)=5$</span>
+							and <span class="yellow">$\beta_3(|S(M_{Sun,\lambda})_4|)=5$</span>.
+							<span class="neon">*Coefficients in $\mathbb{Z}_2$</span>.
+						</div>
+					</div>
+				</div>
 
-		<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+				<div class="fragment" style="margin-bottom:30px;">
+					<div class="typesetting">
+						<div style="margin-bottom:20px;">
+							Since face posets are not $3$-acyclic, manifolds are not equivariantly formal.
+						</div>
+						<div class="rainbow" style="text-align:center;">
+							This finalizes the proof of the main theorem.
+						</div>
+					</div>
+				</div>
 
-		<script>
-			// Full list of configuration options:
-			// https://revealjs.com/config/
-			Reveal.initialize({
-                controls: true,
-				autoAnimateEasing: 'linear',
-				disableLayout: false,
-				margin: 0,
-				center: false,
-				transition: 'none',
-				controlsTutorial: true,
-                controlsLayout: 'bottom-right',
-				//slideNumber: true,
-				//showSlideNumber: 'all',
-				hash: true,
-				//anything: [
-				//	{
-				//		className: "random",
-				//		defaults: { min: 0, max: 9 },
-				//		initialize: (function (container, options) {
-				//			container.innerHTML = Math.trunc(options.min + Math.random() * (options.max - options.min + 1));
-				//		})
-				//	},
-				//],
+			</section>
 
-				plugins: [RevealMath.KaTeX],
 
+
+			<section style="text-align:center;">
+				<div class="fragment" style="margin-bottom:30px; margin-top:200px;">
+					<div class="typesetting">
+						<h2 class="neon">
+							Thank you for your attention!
+						</h2>
+					</div>
+				</div>
+			</section>
+
+			<section class="white" style="font-size:20px;">
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="white">
+						Our papers related to this work:
+					</h2>
+				</div>
+				<ol class="fragment" style="margin-bottom:15px;">
+					<li class="typesetting" style="margin-bottom:10px;">
+						<span class="blue">A.A.Ayzenberg, V.M.Buchstaber</span>, Manifolds of isospectral arrow matrices, Sbornik: Mathematics 212:5 (2021), 3-36.
+						<a href="https://arxiv.org/abs/1803.10449">[link]</a>
+					</li>
+					<li class="typesetting" style="margin-bottom:10px;">
+						<span class="blue">A.A.Ayzenberg, V.M.Buchstaber</span>, Manifolds of isospectral matrices and Hessenberg varieties, IMRN 2021:21 (2021), 16671-16692.
+						<a href="https://arxiv.org/abs/1803.01132">[link]</a>
+					</li>
+					<li class="typesetting" style="margin-bottom:10px;">
+						<span class="blue">A.Ayzenberg</span>, Space of isospectral periodic tridiagonal matrices, Alg. and Geom. Topology 20 (2020), 2957-2994.
+						<a href="https://arxiv.org/abs/1803.11433">[link]</a>
+					</li>
+					<li class="typesetting" style="margin-bottom:10px;">
+						<span class="blue">A.Ayzenberg, M.Masuda</span>, Orbit spaces of equivariantly formal torus actions, Transformation Groups, 2023, preprint.
+						<a href="https://arxiv.org/abs/1912.11696">[link]</a>
+					</li>
+					<li class="typesetting" style="margin-bottom:10px;">
+						<span class="blue">A.Ayzenberg, V.Cherepanov</span>, Matroids in toric topology, 2022,
+						<a href="https://arxiv.org/abs/2203.06282">[preprint].</a>
+					</li>
+					<li class="typesetting" style="margin-bottom:10px;">
+						<span class="blue">A.Ayzenberg, M.Masuda, G.Solomadin</span>, How is a graph not like a manifold?, to appear in Sbornik: Mathematics
+						<a href="https://arxiv.org/abs/2203.10641">[link].</a>
+					</li>
+					<li class="typesetting" style="margin-bottom:10px;">
+						<span class="blue">A.Ayzenberg, V.Buchstaber</span>, Cluster-permutohedra and submanifolds of flag varieties with torus actions, IMRN 2023
+						<a href="https://arxiv.org/abs/2203.14133">[link].</a>
+					</li>
+					<li class="typesetting" style="margin-bottom:10px;">
+						<span class="blue">A.Ayzenberg, K.Sorokin</span>, Topological approach to diagonalization algorithms, 2022, preprint.
+						<a href="https://arxiv.org/abs/2204.06111">[preprint].</a>
+					</li>
+				</ol>
+				<!--<div class="fragment">
+					<div class="typesetting">
+						<div class="yellow">
+							An extended version of this presentation is available
+							<a href="https://antonayzenberg.github.io/toric-diagonalization-slides.github.io/">here</a>.
+							Its source code and instructions on usage lie on
+							<a href="https://github.com/AntonAyzenberg/toric-diagonalization-slides.github.io">Github</a>.
+						</div>
+					</div>
+				</div>-->
+			</section>
+
+
+			<section class="yellow">
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="neon">
+						Technical reference:
+					</h2>
+				</div>
+
+				<table class="fragment">
+					<tr class="typesetting">
+						<td>
+							An extended version of this presentation is available
+							<a href="https://antonayzenberg.github.io/toric-diagonalization-slides.github.io/">here</a>.
+							<img src="pics/QRslides.png" width="300px" />
+						</td>
+						<td>
+							Source code and instructions on usage lie on
+							<a href="https://github.com/AntonAyzenberg/toric-diagonalization-slides.github.io">Github</a>.
+							<img src="pics/QRgithub.png" width="300px" />
+						</td>
+					</tr>
+				</table>
+
+
+			</section>
+		</section>
+
+	</div>
+
+	<script src="scripts/reveal.js"></script>
+	<script src="scripts/math.js"></script>
+	<script src="mathHard/math.js" type="text/javascript"></script>
+	
+	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+	<script>
+		// Full list of configuration options:
+		// https://revealjs.com/config/
+		Reveal.initialize({
+			controls: true,
+			autoAnimateEasing: 'linear',
+			disableLayout: false,
+			margin: 0,
+			center: false,
+			transition: 'none',
+			controlsTutorial: true,
+			controlsLayout: 'bottom-right',
+			//slideNumber: true,
+			//showSlideNumber: 'all',
+			hash: true,
+			//anything: [
+			//	{
+			//		className: "random",
+			//		defaults: { min: 0, max: 9 },
+			//		initialize: (function (container, options) {
+			//			container.innerHTML = Math.trunc(options.min + Math.random() * (options.max - options.min + 1));
+			//		})
+			//	},
+			//],
+
+           
+			plugins: [RevealMath.KaTeX],
+
+		});
+
+		const messA12 = document.querySelector('#a12');
+		const messA13 = document.querySelector('#a13');
+		const messA14 = document.querySelector('#a14');
+		const messA23 = document.querySelector('#a23');
+		const messA24 = document.querySelector('#a24');
+		const messA34 = document.querySelector('#a34');
+
+		const resultA21 = document.querySelector('#a21');
+		const resultA31 = document.querySelector('#a31');
+		const resultA41 = document.querySelector('#a41');
+		const resultA32 = document.querySelector('#a32');
+		const resultA42 = document.querySelector('#a42');
+		const resultA43 = document.querySelector('#a43');
+
+		messA12.addEventListener('input', function () {
+			resultA21.textContent = this.value;
+		});
+		messA13.addEventListener('input', function () {
+			resultA31.textContent = this.value;
+		});
+		messA14.addEventListener('input', function () {
+			resultA41.textContent = this.value;
+		});
+		messA23.addEventListener('input', function () {
+			resultA32.textContent = this.value;
+		});
+		messA24.addEventListener('input', function () {
+			resultA42.textContent = this.value;
+		});
+		messA34.addEventListener('input', function () {
+			resultA43.textContent = this.value;
+		});
+
+		//<input placeholder="Enter some text" id="message" name="message">
+		//    <p id="result"></p>
+
+
+		let taTop, taRight, taBottom, taLeft;
+		let tableForMatrixToAct;
+
+
+		//Reveal.addKeyBinding(78, () => { showElement(document.getElementById("Hui")); }); //this is N letter
+		Reveal.addKeyBinding(89, () => { }); // ??this is Y letter
+
+		Reveal.addKeyBinding(81, () => { showQRMatrix(); }); //this is Q letter
+
+		Reveal.addKeyBinding(82, () => { resetMatrix(); }); //this is R letter
+		Reveal.addKeyBinding(85, () => { resetMatrixFromForm(); }); //this is U letter
+		Reveal.addKeyBinding(84, () => { showTodaStep(); }); //this is T letter
+		Reveal.addKeyBinding(72, () => { helpElement(); }); //this is H letter
+
+
+		const messB12 = document.querySelector('#b12');
+		const messB13 = document.querySelector('#b13');
+		const messB23 = document.querySelector('#b23');
+
+		const resultB21 = document.querySelector('#b21');
+		const resultB31 = document.querySelector('#b31');
+		const resultB32 = document.querySelector('#b32');
+
+		messB12.addEventListener('input', function () {
+			resultB21.textContent = this.value;
+		});
+		messB13.addEventListener('input', function () {
+			resultB31.textContent = this.value;
+		});
+		messB23.addEventListener('input', function () {
+			resultB32.textContent = this.value;
+		});
+
+		let b11input;
+		let b12input;
+		let b13input;
+		let b22input;
+		let b23input;
+		let b33input;
+
+		let matrixForQR;
+		let currMatrixForQR;
+		let currMatrixForToda;
+		let numOfIters = 0;
+		let timeToda = 0;
+		let antiSymmet = [[0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]];
+		const deltaTime = 0.001;
+
+		let container;
+		let canvas;
+		let contx;
+		let wid;
+		let hei;
+		let cols;
+		let ypos;
+		let timer;
+		let originalMatrix = [[1.35, -3.0, 4.0], [-3.0, 1.43, 0], [4.0, 0, -3.86]];
+		let torusContent;
+		let inputForAction = false;
+		let demoIsRunning = false;
+		let actedTable;
+		let inputTable;
+		let matrixCaptionElement;
+
+		let lettersAnimate = true;
+
+		function switchAnimationEffects() {
+			let el = document.getElementById("animStatusField");
+			if (lettersAnimate) {
+				lettersAnimate = false;
+				el.innerHTML = "disabled";
+			} else {
+				lettersAnimate = true;
+				el.innerHTML = "enabled";
+			}
+		}
+
+		function helpElement() {
+			let displayed = document.getElementById("help").style.display;
+
+			if (displayed == "none") {
+				document.getElementById("help").style.display = "initial";
+			} else {
+				document.getElementById("help").style.display = "none";
+			}
+		}
+
+		function wrapTextNode(textNode) {
+			var spanNode = document.createElement('span');
+			spanNode.setAttribute('class', 'freetext');
+			var newTextNode = document.createTextNode(textNode.textContent);
+			spanNode.appendChild(newTextNode);
+			textNode.parentNode.replaceChild(spanNode, textNode);
+		}
+
+		function wrapText(node) {
+			node.childNodes.forEach(lowerNode => {
+				if (lowerNode.nodeType == 3) {
+					let shorten = lowerNode.textContent;
+					shorten = shorten.replace(/(\t|\n)/g, '');
+					if (shorten.length > 0) {
+						wrapTextNode(lowerNode);
+					}
+				} else if (lowerNode.nodeType == 1) {
+					let check = (lowerNode.className != "katex");
+					check = check && (lowerNode.className != "katex-display");
+					check = check && (lowerNode.className != "freetext");
+					if (check) {
+						wrapText(lowerNode);
+					}
+				}
 			});
+		}
 
-            const messA12 = document.querySelector('#a12');
-            const messA13 = document.querySelector('#a13');
-            const messA14 = document.querySelector('#a14');
-            const messA23 = document.querySelector('#a23');
-            const messA24 = document.querySelector('#a24');
-            const messA34 = document.querySelector('#a34');
+		function wrapImage(imag) {
+			let parent = imag.parentNode;
+			let divNode = document.createElement('div');
+			let canvNode = document.createElement('canvas');
+			canvNode.width = imag.naturalWidth;
+			canvNode.height = imag.naturalHeight;
+			divNode.setAttribute('class', 'appearImage');
+			divNode.appendChild(canvNode);
+			divNode.appendChild(imag);
+			parent.appendChild(divNode);
+			imag.style.display = "none";
 
-            const resultA21 = document.querySelector('#a21');
-            const resultA31 = document.querySelector('#a31');
-            const resultA41 = document.querySelector('#a41');
-            const resultA32 = document.querySelector('#a32');
-            const resultA42 = document.querySelector('#a42');
-            const resultA43 = document.querySelector('#a43');
+			let newImag = new Image();
+			newImag.src = imag.src;
+			let ctx = canvNode.getContext('2d');
+			ctx.drawImage(newImag, 0, 0);
+		}
 
-            messA12.addEventListener('input', function () {
-                resultA21.textContent = this.value;
-            });
-            messA13.addEventListener('input', function () {
-                resultA31.textContent = this.value;
-            });
-            messA14.addEventListener('input', function () {
-                resultA41.textContent = this.value;
-            });
-            messA23.addEventListener('input', function () {
-                resultA32.textContent = this.value;
-            });
-            messA24.addEventListener('input', function () {
-                resultA42.textContent = this.value;
-            });
-            messA34.addEventListener('input', function () {
-                resultA43.textContent = this.value;
-            });
+		function totalWrapper() {
 
-			//<input placeholder="Enter some text" id="message" name="message">
-			//    <p id="result"></p>
-
-
-			let taTop, taRight, taBottom, taLeft;
-			let tableForMatrixToAct;
-
-			
-			//Reveal.addKeyBinding(78, () => { showElement(document.getElementById("Hui")); }); //this is N letter
-			Reveal.addKeyBinding(89, () => { }); // ??this is Y letter
-
-            Reveal.addKeyBinding(81, () => { showQRMatrix(); }); //this is Q letter
-
-			Reveal.addKeyBinding(82, () => { resetMatrix(); }); //this is R letter
-			Reveal.addKeyBinding(85, () => { resetMatrixFromForm(); }); //this is U letter
-			Reveal.addKeyBinding(84, () => { showTodaStep(); }); //this is T letter
-			Reveal.addKeyBinding(72, () => { helpElement(); }); //this is H letter
-
-
-            const messB12 = document.querySelector('#b12');
-            const messB13 = document.querySelector('#b13');
-            const messB23 = document.querySelector('#b23');
-            
-            const resultB21 = document.querySelector('#b21');
-            const resultB31 = document.querySelector('#b31');
-            const resultB32 = document.querySelector('#b32');
-            
-            messB12.addEventListener('input', function () {
-                resultB21.textContent = this.value;
-            });
-            messB13.addEventListener('input', function () {
-                resultB31.textContent = this.value;
-            });
-            messB23.addEventListener('input', function () {
-                resultB32.textContent = this.value;
+			document.getElementsByClassName("typesetting").forEach(el => {
+				el.getElementsByTagName("img").forEach(imag => {
+					wrapImage(imag);
+				});
+				wrapText(el);
 			});
+		}
 
-			let b11input;
-            let b12input;
-			let b13input;
-            let b22input;
-            let b23input;
-			let b33input;
+		function changeTableInput() {
+			//???
+			if (!inputForAction) {
+				inputForAction = true;
+				actedBlock.style.display = "none";
+				inputBlock.style.display = "initial";
+				updateInputForm();
+				matrixCaptionElement.textContent = "Type elements. Click here to update.";
+			} else {
+				inputForAction = false;
+				actedBlock.style.display = "initial";
+				inputBlock.style.display = "none";
+				updateMatrixToAct();
+				matrixCaptionElement.textContent = "Edit matrix.";
+			}
+		}
 
-			let matrixForQR;
-			let currMatrixForQR;
-            let currMatrixForToda;
+		function updateInputForm() {
+			b11input.setAttribute("placeholder", originalMatrix[0][0]);
+			b12input.setAttribute("placeholder", originalMatrix[0][1]);
+			b13input.setAttribute("placeholder", originalMatrix[0][2]);
+			b22input.setAttribute("placeholder", originalMatrix[1][1]);
+			b23input.setAttribute("placeholder", originalMatrix[1][2]);
+			b33input.setAttribute("placeholder", originalMatrix[2][2]);
+
+			resultB21.textContent = originalMatrix[1][0];
+			resultB31.textContent = originalMatrix[2][0];
+			resultB32.textContent = originalMatrix[2][1];
+		}
+
+		function updateMatrixToAct() {
+
+			let B = new Array(3);
+			B[0] = new Array(3);
+
+			B[0][0] = b11input.value ? Number(b11input.value) : originalMatrix[0][0];
+			B[0][1] = b12input.value ? Number(b12input.value) : originalMatrix[0][1];
+			B[0][2] = b13input.value ? Number(b13input.value) : originalMatrix[0][2];
+
+			B[1] = new Array(3);
+			B[1][0] = B[0][1];
+			B[1][1] = b22input.value ? Number(b22input.value) : originalMatrix[1][1];
+			B[1][2] = b23input.value ? Number(b23input.value) : originalMatrix[1][2];
+
+			B[2] = new Array(3);
+			B[2][0] = B[0][2];
+			B[2][1] = B[1][2];
+			B[2][2] = b33input.value ? Number(b33input.value) : originalMatrix[2][2];
+
+			originalMatrix = B;
+			//alert(b13value);
+			showMatrixInTable(tableForMatrixToAct, originalMatrix);
+		}
+
+		function startTorusAction() {
+			matrixCaptionElement = document.getElementById("changeTypeButton");
+
+			b11input = document.getElementById("b11");
+			b12input = document.getElementById("b12");
+			b13input = document.getElementById("b13");
+			b22input = document.getElementById("b22");
+			b23input = document.getElementById("b23");
+			b33input = document.getElementById("b33");
+
+			b21show = document.getElementById("b21");
+			b31show = document.getElementById("b31");
+			b31show = document.getElementById("b32");
+
+			actedBlock = document.getElementById("blockToAct");
+			inputBlock = document.getElementById("blockToInput");
+
+			let torusBack = document.getElementById("torusBox");
+			let rect = torusBack.getBoundingClientRect();
+			torusContent = torusBack.querySelectorAll(".torusInterior")[0];
+			taTop = rect.top, taRight = rect.right, taBottom = rect.bottom, taLeft = rect.left;
+			tableForMatrixToAct = document.getElementById("matrixToAct");
+			showMatrixInTable(tableForMatrixToAct, originalMatrix);
+		}
+
+		function getTorusCoords(e) {
+			torusContent.style.color = "#404040";
+			let x = e.clientX;
+			let y = e.clientY;
+			let relX = 2 * math.PI * (x - taLeft) / (taRight - taLeft);
+			let relY = 2 * math.PI * (1 - (y - taTop) / (taBottom - taTop));
+			let newMatrix = [
+				[
+					originalMatrix[0][0],
+					math.complex({ phi: relX, r: originalMatrix[0][1] }),
+					math.complex({ phi: -relX - relY, r: originalMatrix[0][2] })
+				], [
+					math.complex({ phi: -relX, r: originalMatrix[1][0] }),
+					originalMatrix[1][1],
+					math.complex({ phi: relY, r: originalMatrix[1][2] })
+				], [
+					math.complex({ phi: relX + relY, r: originalMatrix[2][0] }),
+					math.complex({ phi: -relY, r: originalMatrix[2][1] }),
+					originalMatrix[2][2]
+				]
+			];
+			showMatrixInTable(tableForMatrixToAct, newMatrix);
+		}
+
+		function resetTorus(e) {
+			showMatrixInTable(tableForMatrixToAct, originalMatrix);
+		}
+
+		function oneQRstep(A) {
+			let res = math.qr(A);
+			let B = math.multiply(res.R, res.Q);
+			return B;
+		}
+
+		function oneTodaStep(A) {
+			let size = 4;
+			//alert(A);
+			for (let i = 0; i < size; i++) {
+				antiSymmet[i][i] = 0;
+				for (let j = i + 1; j < size; j++) {
+					antiSymmet[i][j] = A[i][j];
+					antiSymmet[j][i] = -A[i][j];
+				}
+			}
+			let tang = math.subtract(math.multiply(A, antiSymmet), math.multiply(antiSymmet, A));
+			let ans = math.add(A, math.multiply(deltaTime, tang));
+			//alert(ans);
+			return ans;
+		}
+
+		function showTodaStep() {
+			for (let i = 0; i < 15; i++) {
+				currMatrixForToda = oneTodaStep(currMatrixForToda);
+			}
+
+			let table = document.getElementById("todaFlow");
+			let timeEl = document.getElementById("timeFlow");
+			timeToda += 0.1;
+			timeEl.innerHTML = timeToda.toFixed(1);
+			showMatrixInTable(table, currMatrixForToda);
+		}
+
+		function outputNumber(alpha) {
+			let str;
+			if (typeof alpha == 'number') {
+				alpha = alpha.toFixed(3);
+				if (math.abs(alpha) < 0.001) {
+					str = '<span class="vanish">' + String(alpha) + '</span>';
+				} else {
+					str = String(alpha);
+				}
+			}
+			else {
+				let re = alpha.re, im = alpha.im;
+				if (math.abs(im) < 0.01) {
+					str = outputNumber(re);
+				} else if (im < 0) {
+					str = String(re.toFixed(2)) + String(im.toFixed(2)) + "i";
+				} else {
+					str = String(re.toFixed(2)) + "+" + String(im.toFixed(2)) + "i";
+				}
+			}
+			return str;
+		}
+
+		function showMatrixInTable(table, matr) {
+			let rows = table.getElementsByTagName("tr");
+			let size = rows.length;
+			for (let i = 0; i < size; i++) {
+				let entries = rows[i].getElementsByTagName("td");
+				for (j = 0; j < size; j++) {
+					entries[j].innerHTML = outputNumber(matr[i][j]);
+					//let ent = matr[i][j].toFixed(3);
+					//if (math.abs(ent) < 0.001) {
+					//	entries[j].innerHTML = '<span class="vanish">' + ent + '</span>';
+					//} else {
+					//	entries[j].innerHTML = ent;
+					//}
+				}
+			}
+		}
+
+		function resetMatrixFromForm() {
+
+			let A = new Array(4);
+			A[0] = new Array(4);
+			A[0][0] = document.getElementById("a11").value ? Number(document.getElementById("a11").value) : 1;
+			A[0][1] = document.getElementById("a12").value ? Number(document.getElementById("a12").value) : 0;
+			A[0][2] = document.getElementById("a13").value ? Number(document.getElementById("a13").value) : 0;
+			A[0][3] = document.getElementById("a14").value ? Number(document.getElementById("a14").value) : 0;
+
+			A[1] = new Array(4);
+			A[1][0] = A[0][1];
+			A[1][1] = document.getElementById("a22").value ? Number(document.getElementById("a22").value) : 1;
+			A[1][2] = document.getElementById("a23").value ? Number(document.getElementById("a23").value) : 0;
+			A[1][3] = document.getElementById("a24").value ? Number(document.getElementById("a24").value) : 0;
+
+			A[2] = new Array(4);
+			A[2][0] = A[0][2];
+			A[2][1] = A[1][2];
+			A[2][2] = document.getElementById("a33").value ? Number(document.getElementById("a33").value) : 1;
+			A[2][3] = document.getElementById("a34").value ? Number(document.getElementById("a34").value) : 0;
+
+			A[3] = new Array(4);
+			A[3][0] = A[0][3];
+			A[3][1] = A[1][3];
+			A[3][2] = A[2][3];
+			A[3][3] = document.getElementById("a44").value ? Number(document.getElementById("a44").value) : 1;
+			matrixForQR = A;
+
+			currMatrixForQR = A.slice();
+			//alert(currMatrixForQR);
+			currMatrixForToda = A.slice();
+
+			originalMatrix = [A[0].slice(0, 3), A[1].slice(0, 3), A[2].slice(0, 3)];
+			//alert(originalMatrix);
+
+			let table = document.getElementById("iteratedMatrix");
+			let tableToda = document.getElementById("todaFlow");
+			let numEl = document.getElementById("numberOfIters");
+			let timeEl = document.getElementById("timeFlow");
+			tableForMatrixToAct = document.getElementById("matrixToAct");
+
+			numOfIters = 0;
+			timeToda = 0;
+			showMatrixInTable(table, A);
+			showMatrixInTable(tableToda, A);
+			showMatrixInTable(tableForMatrixToAct, originalMatrix);
+			numEl.innerHTML = numOfIters;
+			timeEl.innerHTML = timeToda;
+		}
+
+		function resetMatrix() {
+			let table = document.getElementById("iteratedMatrix");
+			let numEl = document.getElementById("numberOfIters");
 			let numOfIters = 0;
-			let timeToda = 0;
-            let antiSymmet = [[0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]];
-			const deltaTime = 0.001;
+			numEl.innerHTML = numOfIters;
+			currMatrixForQR = matrixForQR;
+			showMatrixInTable(table, currMatrixForQR);
+		}
 
-            let container;
-            let canvas;
-            let contx;
-            let wid;
-            let hei;
-            let cols;
-			let ypos;
-			let timer;
-			let originalMatrix = [[1.35, -3.0, 4.0], [-3.0, 1.43, 0], [4.0, 0, -3.86]];
-			let torusContent;
-			let inputForAction = false;
-			let demoIsRunning = false;
-			let actedTable;
-			let inputTable;
-			let matrixCaptionElement;
+		function showQRMatrix() {
+			currMatrixForQR = oneQRstep(currMatrixForQR);
+			table = document.getElementById("iteratedMatrix");
+			numEl = document.getElementById("numberOfIters");
+			numOfIters++;
+			numEl.innerHTML = numOfIters;
+			showMatrixInTable(table, currMatrixForQR);
+		}
 
-			let lettersAnimate = true;
+		function hideElement(el) {
+			el.style.visibility = "hidden";
+		}
 
-			function switchAnimationEffects() {
-				let el=document.getElementById("animStatusField");
-				if (lettersAnimate) {
-					lettersAnimate = false;
-					el.innerHTML = "disabled";
+		function showElement(el) {
+			el.style.visibility = "initial";
+		}
+
+		function runDemoLetters() {
+			el = document.getElementById("demoScreen");
+			let i = 0;
+			let content;
+			let n;
+			if (!demoIsRunning && lettersAnimate) {
+				demoIsRunning = true;
+				content = el.innerHTML;
+				n = content.length;
+				printPart();
+			}
+			function printPart() {
+				if (i < n) {
+					let first = content.substring(0, i);
+					let last = content.substring(i);
+					el.innerHTML = first + '<span style="visibility: hidden">' + last + '</span>';
+					i++;
+					setTimeout(printPart, 50);
 				} else {
-					lettersAnimate = true;
-					el.innerHTML = "enabled";
-                }
-            }
-
-			function helpElement() {
-				let displayed = document.getElementById("help").style.display;
-				
-				if (displayed == "none") {
-                    document.getElementById("help").style.display = "initial";
-				} else {
-                    document.getElementById("help").style.display = "none";
-                }
-            }
-
-            function wrapTextNode(textNode) {
-                var spanNode = document.createElement('span');
-                spanNode.setAttribute('class', 'freetext');
-                var newTextNode = document.createTextNode(textNode.textContent);
-                spanNode.appendChild(newTextNode);
-                textNode.parentNode.replaceChild(spanNode, textNode);
-            }
-
-            function wrapText(node) {
-                node.childNodes.forEach(lowerNode => {
-                    if (lowerNode.nodeType == 3) {
-                        let shorten = lowerNode.textContent;
-                        shorten = shorten.replace(/(\t|\n)/g, '');
-                        if (shorten.length > 0) {
-                            wrapTextNode(lowerNode);
-                        }
-                    } else if (lowerNode.nodeType == 1) {
-                        let check = (lowerNode.className != "katex");
-                        check = check && (lowerNode.className != "katex-display");
-                        check = check && (lowerNode.className != "freetext");
-                        if (check) {
-                            wrapText(lowerNode);
-                        }
-                    }
-                });
-            }
-
-            function wrapImage(imag) {
-                let parent = imag.parentNode;
-                let divNode = document.createElement('div');
-                let canvNode = document.createElement('canvas');
-                canvNode.width = imag.naturalWidth;
-                canvNode.height = imag.naturalHeight;
-                divNode.setAttribute('class', 'appearImage');
-                divNode.appendChild(canvNode);
-                divNode.appendChild(imag);
-                parent.appendChild(divNode);
-				imag.style.display = "none";
-
-                let newImag = new Image();
-                newImag.src = imag.src;
-                let ctx = canvNode.getContext('2d');
-                ctx.drawImage(newImag, 0, 0);
-            }
-
-            function totalWrapper() {
-
-                document.getElementsByClassName("typesetting").forEach(el => {
-                    el.getElementsByTagName("img").forEach(imag => {
-                        wrapImage(imag);
-                    });
-                    wrapText(el);
-                });
-			}
-
-			function changeTableInput() {
-				//???
-				if (!inputForAction) {
-					inputForAction = true;
-                    actedBlock.style.display = "none";
-					inputBlock.style.display = "initial";
-					updateInputForm();
-					matrixCaptionElement.textContent = "Type elements. Click here to update.";
-				} else {
-					inputForAction = false;
-                    actedBlock.style.display = "initial";
-                    inputBlock.style.display = "none";                    
-					updateMatrixToAct();
-                    matrixCaptionElement.textContent = "Edit matrix.";
-                }
-			}
-
-			function updateInputForm() {
-				b11input.setAttribute("placeholder", originalMatrix[0][0]);
-				b12input.setAttribute("placeholder", originalMatrix[0][1]);
-				b13input.setAttribute("placeholder", originalMatrix[0][2]);
-				b22input.setAttribute("placeholder", originalMatrix[1][1]);
-				b23input.setAttribute("placeholder", originalMatrix[1][2]);
-				b33input.setAttribute("placeholder", originalMatrix[2][2]);
-
-				resultB21.textContent = originalMatrix[1][0];
-				resultB31.textContent = originalMatrix[2][0];
-                resultB32.textContent = originalMatrix[2][1];
-            }
-
-			function updateMatrixToAct() {
-
-                let B = new Array(3);
-				B[0] = new Array(3);
-				
-                B[0][0] = b11input.value ? Number(b11input.value) : originalMatrix[0][0];
-                B[0][1] = b12input.value ? Number(b12input.value) : originalMatrix[0][1];
-                B[0][2] = b13input.value ? Number(b13input.value) : originalMatrix[0][2];
-				
-                B[1] = new Array(3);
-				B[1][0] = B[0][1];
-                B[1][1] = b22input.value ? Number(b22input.value) : originalMatrix[1][1];
-                B[1][2] = b23input.value ? Number(b23input.value) : originalMatrix[1][2];
-                
-                B[2] = new Array(3);
-                B[2][0] = B[0][2];
-                B[2][1] = B[1][2];
-                B[2][2] = b33input.value ? Number(b33input.value) : originalMatrix[2][2];
-                
-				originalMatrix = B;
-				//alert(b13value);
-                showMatrixInTable(tableForMatrixToAct, originalMatrix);
-            }
-
-			function startTorusAction() {
-				matrixCaptionElement=document.getElementById("changeTypeButton");
-
-				b11input = document.getElementById("b11");
-                b12input = document.getElementById("b12");
-				b13input = document.getElementById("b13");
-				b22input = document.getElementById("b22");
-				b23input = document.getElementById("b23");
-				b33input = document.getElementById("b33");
-
-				b21show = document.getElementById("b21");
-				b31show = document.getElementById("b31");
-                b31show = document.getElementById("b32");
-
-				actedBlock = document.getElementById("blockToAct");
-				inputBlock = document.getElementById("blockToInput");
-
-				let torusBack = document.getElementById("torusBox");
-				let rect = torusBack.getBoundingClientRect();
-				torusContent = torusBack.querySelectorAll(".torusInterior")[0];
-				taTop = rect.top, taRight = rect.right, taBottom = rect.bottom, taLeft = rect.left;
-                tableForMatrixToAct = document.getElementById("matrixToAct");
-				showMatrixInTable(tableForMatrixToAct, originalMatrix);
-            }
-
-			function getTorusCoords(e) {
-                torusContent.style.color = "#404040";
-                let x = e.clientX;
-				let y = e.clientY;
-                let relX = 2*math.PI*(x - taLeft) / (taRight - taLeft);
-				let relY = 2 * math.PI * (1 - (y - taTop) / (taBottom - taTop));
-				let newMatrix = [
-					[
-						originalMatrix[0][0],
-						math.complex({ phi: relX, r: originalMatrix[0][1] }),
-						math.complex({ phi: -relX - relY, r: originalMatrix[0][2] })
-					], [
-						math.complex({ phi: -relX, r: originalMatrix[1][0] }),
-						originalMatrix[1][1],
-						math.complex({ phi: relY, r: originalMatrix[1][2] })
-					], [
-						math.complex({ phi: relX + relY, r: originalMatrix[2][0] }),
-						math.complex({ phi: -relY, r: originalMatrix[2][1] }),
-						originalMatrix[2][2]
-					]
-				];
-				showMatrixInTable(tableForMatrixToAct, newMatrix);
-			}
-
-			function resetTorus(e) {
-                showMatrixInTable(tableForMatrixToAct, originalMatrix);
-			}
-
-            function oneQRstep(A) {
-                let res = math.qr(A);
-                let B = math.multiply(res.R, res.Q);
-                return B;
-            }
-
-            function oneTodaStep(A) {
-                let size = 4;
-                //alert(A);
-                for (let i = 0; i < size; i++) {
-                    antiSymmet[i][i] = 0;
-                    for (let j = i + 1; j < size; j++) {
-                        antiSymmet[i][j] = A[i][j];
-                        antiSymmet[j][i] = -A[i][j];
-                    }
-                }
-                let tang = math.subtract(math.multiply(A, antiSymmet), math.multiply(antiSymmet, A));
-                let ans = math.add(A, math.multiply(deltaTime, tang));
-                //alert(ans);
-                return ans;
-            }
-
-            function showTodaStep() {
-                for (let i = 0; i < 15; i++) {
-                    currMatrixForToda = oneTodaStep(currMatrixForToda);
-                }
-
-                let table = document.getElementById("todaFlow");
-                let timeEl = document.getElementById("timeFlow");
-                timeToda += 0.1;
-                timeEl.innerHTML = timeToda.toFixed(1);
-                showMatrixInTable(table, currMatrixForToda);
-            }
-
-			function outputNumber(alpha) {
-				let str;
-				if (typeof alpha == 'number') {
-					alpha = alpha.toFixed(3);
-					if (math.abs(alpha) < 0.001) {
-						str = '<span class="vanish">' + String(alpha) + '</span>';
-					} else {
-						str = String(alpha);
-					}
-				}
-				else {
-					let re = alpha.re, im = alpha.im;
-					if (math.abs(im) < 0.01) {
-						str = outputNumber(re);
-                    } else if (im < 0) {
-						str = String(re.toFixed(2)) + String(im.toFixed(2)) + "i";
-					} else {
-                        str = String(re.toFixed(2)) + "+" + String(im.toFixed(2)) + "i";
-                    }
-				}
-				return str;
-            }
-
-			function showMatrixInTable(table, matr) {
-				let rows = table.getElementsByTagName("tr");
-				let size = rows.length;
-				for (let i = 0; i < size; i++) {
-					let entries = rows[i].getElementsByTagName("td");
-					for (j = 0; j < size; j++) {
-						entries[j].innerHTML = outputNumber(matr[i][j]);
-						//let ent = matr[i][j].toFixed(3);
-						//if (math.abs(ent) < 0.001) {
-						//	entries[j].innerHTML = '<span class="vanish">' + ent + '</span>';
-						//} else {
-						//	entries[j].innerHTML = ent;
-						//}
-					}
+					el.innerHTML = content;
+					demoIsRunning = false;
 				}
 			}
+		}
 
-			function resetMatrixFromForm() {
+		function playAnimation(element) {
+			let list = [];
+			hideAll();
+			let counter = 0;
+			let i = 0;
+			typeset();
 
-				let A = new Array(4);
-				A[0] = new Array(4);
-				A[0][0] = document.getElementById("a11").value ? Number(document.getElementById("a11").value) : 1;
-				A[0][1] = document.getElementById("a12").value ? Number(document.getElementById("a12").value) : 0;
-				A[0][2] = document.getElementById("a13").value ? Number(document.getElementById("a13").value) : 0;
-				A[0][3] = document.getElementById("a14").value ? Number(document.getElementById("a14").value) : 0;
-
-				A[1] = new Array(4);
-				A[1][0] = A[0][1];
-				A[1][1] = document.getElementById("a22").value ? Number(document.getElementById("a22").value) : 1;
-				A[1][2] = document.getElementById("a23").value ? Number(document.getElementById("a23").value) : 0;
-				A[1][3] = document.getElementById("a24").value ? Number(document.getElementById("a24").value) : 0;
-
-				A[2] = new Array(4);
-				A[2][0] = A[0][2];
-				A[2][1] = A[1][2];
-				A[2][2] = document.getElementById("a33").value ? Number(document.getElementById("a33").value) : 1;
-				A[2][3] = document.getElementById("a34").value ? Number(document.getElementById("a34").value) : 0;
-
-				A[3] = new Array(4);
-				A[3][0] = A[0][3];
-				A[3][1] = A[1][3];
-				A[3][2] = A[2][3];
-				A[3][3] = document.getElementById("a44").value ? Number(document.getElementById("a44").value) : 1;
-				matrixForQR = A;
-
-				currMatrixForQR = A.slice();
-                //alert(currMatrixForQR);
-				currMatrixForToda = A.slice();
-
-				originalMatrix = [A[0].slice(0,3), A[1].slice(0,3), A[2].slice(0,3)];
-				//alert(originalMatrix);
-                
-				let table = document.getElementById("iteratedMatrix");
-				let tableToda = document.getElementById("todaFlow");
-                let numEl = document.getElementById("numberOfIters");
-				let timeEl = document.getElementById("timeFlow");
-                tableForMatrixToAct = document.getElementById("matrixToAct");
-
-                numOfIters = 0;
-                timeToda = 0;
-				showMatrixInTable(table, A);
-				showMatrixInTable(tableToda, A);
-                showMatrixInTable(tableForMatrixToAct, originalMatrix);
-				numEl.innerHTML = numOfIters;
-				timeEl.innerHTML = timeToda;
+			function moveNext() {
+				counter++;
+				setTimeout(typeset, 100);
 			}
 
-			function resetMatrix() {
-				let table = document.getElementById("iteratedMatrix");
-				let numEl = document.getElementById("numberOfIters");
-				let numOfIters = 0;
-				numEl.innerHTML = numOfIters;
-				currMatrixForQR = matrixForQR;
-				showMatrixInTable(table, currMatrixForQR);
-			}
-
-			function showQRMatrix() {
-				currMatrixForQR = oneQRstep(currMatrixForQR);
-				table = document.getElementById("iteratedMatrix");
-				numEl = document.getElementById("numberOfIters");
-				numOfIters++;
-				numEl.innerHTML = numOfIters;
-				showMatrixInTable(table, currMatrixForQR);
-			}
-
-			function hideElement(el) {
-				el.style.visibility = "hidden";
-			}
-
-			function showElement(el) {
-				el.style.visibility = "initial";
-			}
-
-			function runDemoLetters() {
-				el = document.getElementById("demoScreen");
-				let i = 0;
+			function typeset() {
+				i = 0;
+				let node;
 				let content;
-				let n;
-				if (!demoIsRunning && lettersAnimate) {
-					demoIsRunning = true;
-					content = el.innerHTML;
-                    n = content.length;
-					printPart();
-				}
-				function printPart() {
-					if (i < n) {
-						let first = content.substring(0, i); 
-						let last = content.substring(i);
-						el.innerHTML = first + '<span style="visibility: hidden">' + last + '</span>';
-						i++;
-                        setTimeout(printPart, 50);
+				let imag = new Image();
+				let w;
+				let h;
+				let backColor = 'black';// window.getComputedStyle(node).getPropertyValue('background-color');
+				let pixels;
+
+				if (counter < list.length) {
+					node = list[counter];
+					showElement(node);
+					if (node.className == "freetext") {
+						content = node.innerHTML;
+						printMoree();
+					} else if (node.className == "appearImage") {
+						let imgNode = node.getElementsByTagName("img")[0];
+						imag.src = imgNode.src;
+						w = imag.width;
+						h = imag.height;
+						//alert(w);
+						let c = node.getElementsByTagName("canvas")[0];
+						let ctx = c.getContext('2d');
+						ctx.drawImage(imag, 0, 0);
+						pixels = ctx.getImageData(0, 0, w, h).data;
+						printImag(ctx);
 					} else {
-						el.innerHTML = content;
-						demoIsRunning = false;
-                    }
-                }
-            }
-
-			function playAnimation(element) {
-				let list = [];
-				hideAll();
-				let counter = 0;
-				let i = 0;
-				typeset();
-
-				function moveNext() {
-					counter++;
-					setTimeout(typeset, 100);
+						moveNext();
+					}
 				}
 
-				function typeset() {
-					i = 0;
-					let node;
-					let content;
-					let imag = new Image();
-					let w;
-					let h;
-					let backColor = 'black';// window.getComputedStyle(node).getPropertyValue('background-color');
-					let pixels;
-
-					if (counter < list.length) {
-						node = list[counter];
-						showElement(node);
-						if (node.className == "freetext") {
-							content = node.innerHTML;
-							printMoree();
-						} else if (node.className == "appearImage") {
-							let imgNode = node.getElementsByTagName("img")[0];
-							imag.src = imgNode.src;
-							w = imag.width;
-							h = imag.height;
-							//alert(w);
-							let c = node.getElementsByTagName("canvas")[0];
-							let ctx = c.getContext('2d');
-							ctx.drawImage(imag, 0, 0);
-							pixels = ctx.getImageData(0, 0, w, h).data;
-							printImag(ctx);
-						} else {
-							moveNext();
-						}
-					}
-
-					function printImag(ctx) {
-						i++;
-						let sampleSize = 1;
-						if (i < 6) {
-							sampleSize = 2 ** (6 - i);
-							//alert(pixels);
-							ctx.clearRect(0, 0, w, h);
-							for (let y = 0; y < h; y += sampleSize) {
-								for (let x = 0; x < w; x += sampleSize) {
-									let p = (x + (y * w)) * 4;
-									ctx.fillStyle = "rgba(" + pixels[p] + "," + pixels[p + 1] + "," + pixels[p + 2] + "," + pixels[p + 3] + ")";
-									ctx.fillRect(x, y, sampleSize, sampleSize);
-								}
+				function printImag(ctx) {
+					i++;
+					let sampleSize = 1;
+					if (i < 6) {
+						sampleSize = 2 ** (6 - i);
+						//alert(pixels);
+						ctx.clearRect(0, 0, w, h);
+						for (let y = 0; y < h; y += sampleSize) {
+							for (let x = 0; x < w; x += sampleSize) {
+								let p = (x + (y * w)) * 4;
+								ctx.fillStyle = "rgba(" + pixels[p] + "," + pixels[p + 1] + "," + pixels[p + 2] + "," + pixels[p + 3] + ")";
+								ctx.fillRect(x, y, sampleSize, sampleSize);
 							}
-							setTimeout(printImag, 100, ctx);
-						} else {
-							ctx.clearRect(0, 0, w, h);
-							ctx.drawImage(imag, 0, 0);
-							moveNext();
 						}
-					}
-
-					function printMoree() {
-						i++;
-						let first = content.substring(0, i); //+ " ".repeat(nodeData.len - i);
-						let last = content.substring(i);
-						//node.innerHTML = first + '<span style="color:' + backColor + '">' + last + '</span>';
-						node.innerHTML = first + '<span style="visibility: hidden">' + last + '</span>';
-
-						if (i < content.length) {
-							setTimeout(printMoree, 10);
-						} else {
-							node.innerHTML = content;
-							moveNext();
-						}
+						setTimeout(printImag, 100, ctx);
+					} else {
+						ctx.clearRect(0, 0, w, h);
+						ctx.drawImage(imag, 0, 0);
+						moveNext();
 					}
 				}
 
-				function hideAll() {
-					list = element.querySelectorAll(".freetext,.katex,.katex-display,.appearImage");
-					for (let i = 0; i < list.length; i++) {
-						hideElement(list[i]);
+				function printMoree() {
+					i++;
+					let first = content.substring(0, i); //+ " ".repeat(nodeData.len - i);
+					let last = content.substring(i);
+					//node.innerHTML = first + '<span style="color:' + backColor + '">' + last + '</span>';
+					node.innerHTML = first + '<span style="visibility: hidden">' + last + '</span>';
+
+					if (i < content.length) {
+						setTimeout(printMoree, 10);
+					} else {
+						node.innerHTML = content;
+						moveNext();
 					}
 				}
 			}
 
-            function matrix() {
-                // Draw a semitransparent black rectangle on top of previous drawing
-                contx.fillStyle = '#0001';
-                contx.fillRect(0, 0, wid, hei);
+			function hideAll() {
+				list = element.querySelectorAll(".freetext,.katex,.katex-display,.appearImage");
+				for (let i = 0; i < list.length; i++) {
+					hideElement(list[i]);
+				}
+			}
+		}
 
-                // Set color to green and font to 15pt monospace in the drawing context
-                contx.fillStyle = '#0f0';
-                contx.font = '15pt monospace';
+		function matrix() {
+			// Draw a semitransparent black rectangle on top of previous drawing
+			contx.fillStyle = '#0001';
+			contx.fillRect(0, 0, wid, hei);
 
-                // for each column put a random character at the end
-                ypos.forEach((y, ind) => {
-                    // generate a random character
-                    let text = String.fromCharCode(Math.random() * 128);
+			// Set color to green and font to 15pt monospace in the drawing context
+			contx.fillStyle = '#0f0';
+			contx.font = '15pt monospace';
 
-                    // x coordinate of the column, y coordinate is already given
-                    let x = ind * 20;
-                    // render the character at (x, y)
-                    contx.fillText(text, x, y);
+			// for each column put a random character at the end
+			ypos.forEach((y, ind) => {
+				// generate a random character
+				let text = String.fromCharCode(Math.random() * 128);
 
-                    // randomly reset the end of the column if it's at least 100px high
-                    if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
-                    // otherwise just move the y coordinate for the column 20px down,
-                    else ypos[ind] = y + 20;
+				// x coordinate of the column, y coordinate is already given
+				let x = ind * 20;
+				// render the character at (x, y)
+				contx.fillText(text, x, y);
+
+				// randomly reset the end of the column if it's at least 100px high
+				if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+				// otherwise just move the y coordinate for the column 20px down,
+				else ypos[ind] = y + 20;
+			});
+		}
+
+		function stopMatrix() {
+			clearInterval(timer);
+			timer = 0;
+			matrixIsRunning = false;
+		}
+
+		function runMatrix() {
+			container = document.getElementById("falling");
+			canvas = document.getElementById('canv');
+			contx = canvas.getContext('2d');
+			wid = canvas.width = container.offsetWidth;
+			hei = canvas.height = container.offsetHeight;
+			contx.fillStyle = '#000';
+			contx.fillRect(0, 0, wid, hei);
+
+			cols = Math.floor(wid / 20) + 1;
+			ypos = Array(cols).fill(0);
+
+			timer = setInterval(matrix, 100);
+			//alert(timer);
+		}
+
+		function runCredits() {
+			let el = document.getElementById("creditTable");
+			el.setAttribute("class", "anim");
+			//class="anim"
+		}
+
+		let matrixIsRunning = false;
+
+		Reveal.addEventListener('fragmentshown', function (event) {
+			if (lettersAnimate) {
+				event.fragment.getElementsByClassName('typesetting').forEach(element => {
+					playAnimation(element);
 				});
 			}
-
-			function stopMatrix() {
-				clearInterval(timer);
-				timer = 0;
-                matrixIsRunning = false;
-            }
-
-			function runMatrix() {
-                container = document.getElementById("falling");
-                canvas = document.getElementById('canv');
-				contx = canvas.getContext('2d');
-				wid = canvas.width = container.offsetWidth;
-                hei = canvas.height = container.offsetHeight;
-				contx.fillStyle = '#000';
-                contx.fillRect(0, 0, wid, hei);
-
-                cols = Math.floor(wid / 20) + 1;
-                ypos = Array(cols).fill(0);
-
-				timer = setInterval(matrix, 100);
-                //alert(timer);
+			if ((event.fragment.id == "matrixEffect") && (!matrixIsRunning)) {
+				//alert("Fuck");
+				matrixIsRunning = true;
+				runMatrix();
+			} else if (timer) {
+				stopMatrix();
+			}
+			if (event.fragment.id == "credits") {
+				runCredits();
+			}
+			if (event.fragment.id == "torusActs") {
+				startTorusAction();
 			}
 
-			function runCredits() {
-				let el = document.getElementById("creditTable");
-				el.setAttribute("class", "anim");
-                //class="anim"
-            }
-
-			let matrixIsRunning = false;
-
-			Reveal.addEventListener('fragmentshown', function (event) {
-				if (lettersAnimate) {
-                    event.fragment.getElementsByClassName('typesetting').forEach(element => {
-                        playAnimation(element);
-                    });
-                }
-				if ((event.fragment.id == "matrixEffect") && (!matrixIsRunning) ) {
-					//alert("Fuck");
-					matrixIsRunning = true;
-					runMatrix();
-                } else if (timer) {
-                    stopMatrix();
-				}
-				if (event.fragment.id == "credits") {
-					runCredits();
-				}
-                if (event.fragment.id == "torusActs") {
-                    startTorusAction();
-                }
-				
-			});
+		});
 
 
-		</script>
+	</script>
 
-	</body>
+</body>
 </html>
