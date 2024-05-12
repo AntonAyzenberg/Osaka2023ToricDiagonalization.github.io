@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 
 	<title>
-		Shapes of Hermitian matrices and topology of the corresponding isospectral manifolds
+		Homological obstructions to existence of diagonalization algorithms for sparse matrices
 	</title>
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -36,7 +36,7 @@
 			<section class="white" style="text-align: center;">
 				<div class="r-frame" style="margin-bottom:50px; margin-top:60px;">
 					<h3 class="white">
-						Shapes of Hermitian matrices and topology of the corresponding isospectral manifolds
+						Homological obstructions to existence of diagonalization algorithms for sparse matrices
 					</h3>
 				</div>
 
@@ -48,10 +48,10 @@
 
 				<p style="margin-bottom:40px;">
 					<h4 class="blue">
-						Algebraic topology, combinatorics, and mathematical physics.
+						BIMSA Topology Seminar
 					</h4>
 					<h4 class="white">
-						Sochi, SMC, 2023
+						BIMSA/Zoom, May 16, 2024
 					</h4>
 				</p>
 
@@ -284,11 +284,47 @@
 
 			</section>
 
+			<section>
+				<div class="r-frame" style="margin-bottom:35px; margin-top:25px;">
+					<h2 class="neon">
+						Graphs and matrix shapes.
+					</h2>
+				</div>
+
+				<div class="fragment" style="margin-bottom:30px;">
+					<div class="typesetting">
+						<div class="r-frame">
+							<h3 class="blue" style="text-align:center;">
+								We are interested in homological complexity of $M_{\Gamma,\lambda}$
+								depending on graph $\Gamma$.
+							</h3>
+						</div>
+					</div>
+				</div>
+
+				<div class="fragment" style="margin-bottom:30px;">
+					<div class="typesetting">
+						Observations:
+						<ul style="margin-top:25px;">
+							<li>
+								For all graphs $\Gamma$ on $n$ vertices we have $\chi(M_{\Gamma,\lambda})=n!$.
+							</li>
+							<li>
+								For some graphs $\Gamma$ we have $H^{odd}(M_{\Gamma,\lambda})=0$ and hence $\beta(M_{\Gamma,\lambda})=n!$.
+							</li>
+							<li>
+								For some graphs $\Gamma$ we have $H^{odd}(M_{\Gamma,\lambda})\neq0$ and hence $\beta(M_{\Gamma,\lambda})>n!$.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</section>
 
 			<section data-auto-animate>
 				<div class="r-frame" style="margin-bottom:20px; margin-top:25px;">
 					<h2 class="white">
-						Torus action on matrices:
+						Main tool: toric topology
 					</h2>
 				</div>
 
@@ -383,14 +419,6 @@
 							Therefore, the torus <span class="blue">$T$ acts on $M_{\Gamma,\lambda}$</span>.
 						</li>
 					</ul>
-
-					<div class="fragment" style="margin-bottom:30px;">
-						<div class="typesetting">
-							<div class="r-frame">
-								<h3 class="blue" style="text-align:center;">We are interested in toric topology of $M_{\Gamma,\lambda}$</h3>
-							</div>
-						</div>
-					</div>
 				</div>
 			</section>
 
@@ -475,8 +503,8 @@
 					<div class="typesetting">
 						<div class="r-frame">
 							<h3 style="text-align:center;">
-								<span class="rainbow">Problem for today:</span> which manifolds $M_{\Gamma,\lambda}$
-								are equiavariantly formal?
+								<span class="rainbow">Problem for today:</span> which graphs $\Gamma$ give equivariantly formal manifolds
+								$M_{\Gamma,\lambda}$?
 							</h3>
 						</div>
 					</div>
@@ -527,7 +555,7 @@
 							<li>
 								Hence $M_\lambda\cong U(n)/T=Fl_n$, the <span class="blue">full flag variety</span>.
 							<li>
-								It is <span class="neon">equivariantly formal</span>.
+								It is <span class="neon">equivariantly formal</span>. $\beta(Fl_n)=n!$.
 							</li>
 						</ul>
 					</div>
@@ -585,7 +613,7 @@
 								<span class="blue">quasitoric manifold over permutohedron</span>.
 							</li>
 							<li>
-								$M_{\mathbb{I}_n,\lambda}$ is <span class="neon">equivariantly formal</span>.
+								$M_{\mathbb{I}_n,\lambda}$ is <span class="neon">equivariantly formal</span>. $\beta(M_{\mathbb{I}_n,\lambda})=n!$.
 							</li>
 						</ul>
 					</div>
@@ -652,7 +680,7 @@
 					</h2>
 				</div>
 
-				<div class="fragment" style="margin-bottom:30px;">
+				<div class="fragment" style="margin-bottom:15px;">
 					<div class="typesetting">
 						<table style="font-size: 20px;">
 							<tr>
@@ -685,26 +713,28 @@
 					</div>
 				</div>
 
-				<table class="fragment" style="margin-bottom: 20px;">
-					<tr class="white">
-						<td class="typesetting" style="width:650px; text-align:left;">
-							<div class="r-frame" style="margin-bottom: 15px;">
-								<span class="red">Theorem (Gal-Januszkiewicz, unpublished):</span>
-								$M_{St_3,\lambda}/T$ is a solid torus with boundary subdivided into hexagons.
-							</div>
-							Therefore, from <span class="yellow">Masuda-Panov theorem</span> it follows that <br />
-							<span class="red">$M_{St_3,\lambda}$ is not equivariantly formal</span>.
-						</td>
-						<td>
-							<div class="r-frame">
-								<img src="pics/animatedTorus.gif" style="width:200px;">
-							</div>
-						</td>
-					</tr>
-				</table>
+				<div class="r-stack" margin-bottom:20px">
+					<div class="fragment fade-in-then-out">
+						<table>
+							<tr class="white">
+								<td class="typesetting" style="width:650px; text-align:left;">
+									<div class="r-frame" style="margin-bottom: 15px;">
+										<span class="red">Theorem (Gal-Januszkiewicz, unpublished):</span>
+										$M_{St_3,\lambda}/T$ is a solid torus with boundary subdivided into hexagons.
+									</div>
+									<span class="yellow">Masuda-Panov theorem:</span> if $T^n$ effectively acts on
+									$M^{2n}$ with isolated fixed points, then equivariant formality implies $M^{2n}/T^n$ is acyclic.
+								</td>
+								<td>
+									<div class="r-frame">
+										<img src="pics/animatedTorus.gif" style="width:200px;">
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
 
-				<!--<div class="fragment">
-					<div class="typesetting">
+					<div class="fragment">
 						<ul class="white">
 							<li>
 								A.-Buchstaber computed Betti numbers in the simplest case
@@ -713,14 +743,34 @@
 								\]
 							</li>
 							<li>
-								We also described homotopy type of $M_{St_n,\lambda}/T$ for any star graph $St_n$.
-							</li>
-							<li>
-								$M_{St_n,\lambda}$ is not formal for $n\geqslant 3$.
+								It follows directly that $M_{St_n,\lambda}$ is not formal for $n\geqslant 3$.
 							</li>
 						</ul>
 					</div>
-				</div>-->
+				</div>
+
+
+
+
+
+				<!--<div class="fragment">
+			<div class="typesetting">
+				<ul class="white">
+					<li>
+						A.-Buchstaber computed Betti numbers in the simplest case
+						\[
+						\beta(M_{St_3,\lambda})=(1,1,12,0,12,1,1).
+						\]
+					</li>
+					<li>
+						We also described homotopy type of $M_{St_n,\lambda}/T$ for any star graph $St_n$.
+					</li>
+					<li>
+						$M_{St_n,\lambda}$ is not formal for $n\geqslant 3$.
+					</li>
+				</ul>
+			</div>
+		</div>-->
 			</section>
 
 			<section>
@@ -794,7 +844,7 @@
 									in general position on $X$, then $X/T$ is a <span class="blue">homology sphere</span>.
 								</div>
 								<p style="text-align:center;">
-									But I proved: $M_{Cy_n,\lambda}/T\cong S^4\times T^{n-3}$.
+									A.'18: $M_{Cy_n,\lambda}/T\cong S^4\times T^{n-3}$.
 								</p>
 							</div>
 						</div>
@@ -980,7 +1030,7 @@
 									$\beta(M_{\Gamma,\lambda})>n!$, hence
 								</li>
 								<li>
-									any <span class="blue">Morse-Smale flow</span> on $M_{\Gamma,\lambda}$ has $>n!$ stationary points.
+									any <span class="blue">Morse-Smale flow or cascade</span> on $M_{\Gamma,\lambda}$ has $>n!$ stationary points.
 								</li>
 							</ul>
 						</h3>
@@ -1133,10 +1183,55 @@
 
 			</section>
 
+
+			<section id="QRalgorithm">
+				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
+					<h2 class="yellow">
+						Nonexistence of algorithms
+					</h2>
+				</div>
+
+
+				<div class="fragment" style="margin-bottom:50px;">
+					<div class="typesetting">
+						<ul>
+							<li>
+								Assume a Morse-Smale flow (or cascade) exists on $M_{\Gamma,\lambda}$
+							</li>
+							<li>
+								such that its stationary points are only diagonal matrices.
+							</li>
+							<li>
+								In this case we say that the flow defines a Morse-Smale type asymptotical diagonalization algorithm.
+							</li>
+							<li>
+								Since there are $n!$ many stationary points, we have
+							</li>
+							<li>
+								$\beta(M_{\Gamma,\lambda})\leqslant n!$ by <span class="white">Morse inequality</span>.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="fragment">
+					<div class="typesetting">
+						<h3 class="r-frame" style="margin-bottom: 70px;">
+							<span class="red">
+								Corollary:
+							</span> If $\Gamma$ is not indifference, then no Morse-Smale type diagonalization algorithm exists for
+							$\Gamma$-shaped matrices.
+						</h3>
+					</div>
+				</div>
+
+
+			</section>
+
 			<section class="white">
 				<div class="r-frame" style="margin-bottom:30px; margin-top:25px;">
 					<h2 class="neon">
-						How we prove:
+						How we prove Main Theorem:
 					</h2>
 				</div>
 
@@ -1565,7 +1660,7 @@
 
 				<div class="fragment" style="margin-bottom:30px;">
 					<div class="typesetting" style="margin-bottom: 30px;">
-						We unpacked our computers, ran <span class="yellow">Sage</span>, and calculated:
+						We wrote a script in <span class="yellow">Sage</span>, and computed:
 					</div>
 					<div class="typesetting">
 						<div class="r-frame">
@@ -1644,15 +1739,15 @@
 					</li>
 				</ol>
 				<!--<div class="fragment">
-					<div class="typesetting">
-						<div class="yellow">
-							An extended version of this presentation is available
-							<a href="https://antonayzenberg.github.io/toric-diagonalization-slides.github.io/">here</a>.
-							Its source code and instructions on usage lie on
-							<a href="https://github.com/AntonAyzenberg/toric-diagonalization-slides.github.io">Github</a>.
-						</div>
-					</div>
-				</div>-->
+			<div class="typesetting">
+				<div class="yellow">
+					An extended version of this presentation is available
+					<a href="https://antonayzenberg.github.io/toric-diagonalization-slides.github.io/">here</a>.
+					Its source code and instructions on usage lie on
+					<a href="https://github.com/AntonAyzenberg/toric-diagonalization-slides.github.io">Github</a>.
+				</div>
+			</div>
+		</div>-->
 			</section>
 
 
